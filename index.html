@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Céline DEMONGEOT - Ingénieur QA / Expert Test & Validation / QA Lead
+      (Certifiée ISTQB Full Advanced)
+    </title>
+
+    <meta
+      name="description"
+      content="CV de Céline DEMONGEOT. Ingénieur QA / Expert Test & Validation / QA Lead certifiée ISTQB Full Advanced. Expertise en qualification logicielle, firmware, systèmes IoT et intégration continue."
+    />
+    <link rel="canonical" href="https://cv.demongeot.org/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cv.demongeot.org/" />
+    <meta
+      property="og:title"
+      content="Céline DEMONGEOT - Ingénieur QA / Test, Validation & Intégration"
+    />
+    <meta
+      property="og:description"
+      content="Découvrez mon parcours : Expertise ISTQB, Validation Logicielle et Systèmes IoT ainsi qu'en intégration."
+    />
+    <meta
+      name="keywords"
+      content="demongeot, céline, ingénieur, validation, test, qa, ivvq, vérification, istqb, scénario, informatique, emploi, cv, integration, informaticien"
+    />
+    <meta name="author" content="Céline DEMONGEOT, celine@demongeot.org" />
+    <meta name="geo.region" content="FR-PAC" />
+    <meta name="geo.placename" content="Fuveau" />
+    <meta name="geo.position" content="43.45;5.56" />
+    <meta name="ICBM" content="43.45, 5.56" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      /* ===========================
+           ACCORDION STYLES
+           (Overrides & Additions to style.css)
+           =========================== */
+
+      /* Override default timeline-item to remove grid and behave as block */
+      .timeline-item {
+        display: block !important;
+        grid-template-columns: none !important;
+        gap: 0 !important;
+        margin-bottom: 2rem;
+        /* Animation is kept from style.css */
+      }
+
+      /* Hide elements from the old timeline design */
+      .timeline-marker {
+        display: none;
+      }
+
+      /* Override timeline-content to support accordion behavior */
+      .timeline-content {
+        padding: 0 !important; /* Remove default padding to let header control it */
+        overflow: hidden;
+        cursor: default;
+        display: block !important;
+      }
+
+      /* Header - Always visible area */
+      .timeline-header {
+        padding: 1.5rem;
+        cursor: pointer;
+        user-select: none;
+        position: relative;
+        transition: background-color 0.3s ease;
+      }
+
+      .timeline-header:hover {
+        background-color: #f9fafb;
+      }
+
+      /* Rotating Arrow Indicator */
+      .timeline-header::after {
+        content: "";
+        position: absolute;
+        right: 1.5rem;
+        transform: translateY(-50%) rotate(0deg);
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid var(--color-accent);
+        transition: transform 0.3s ease;
+      }
+
+      .timeline-item.expanded .timeline-header::after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      .timeline-header.no-arrow::after {
+        display: none !important;
+      }
+
+      /* Layout for Header Elements */
+      .exp-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0.5rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      /* Override date style for accordion context */
+      .timeline-item .timeline-date {
+        text-align: left;
+        padding: 0;
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: var(--color-accent);
+      }
+
+      .timeline-summary {
+        color: var(--color-text-light);
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-summary ul {
+        margin-left: 1.5rem;
+        margin-top: 0.5rem;
+        list-style-type: disc;
+      }
+
+      .click-hint {
+        display: inline-block;
+        font-size: 0.75rem;
+        color: var(--color-accent);
+        font-weight: 600;
+        margin-top: 0.5rem;
+        opacity: 0.8;
+      }
+
+      /* Details - Hidden by default */
+      .timeline-details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.3s ease;
+        padding: 0 1.5rem;
+        border-top: 1px solid transparent;
+        background-color: var(--color-white);
+      }
+
+      .timeline-item.expanded .timeline-details {
+        max-height: 3000px;
+        padding: 1.5rem;
+        border-top: 1px solid var(--color-border);
+      }
+
+      .timeline-details-inner {
+        color: var(--color-text);
+        line-height: 1.7;
+      }
+
+      .timeline-details ul {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+        list-style-type: disc;
+      }
+
+      .timeline-details li {
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-details li strong {
+        color: var(--color-primary);
+      }
+
+      .section-subtitle-sm {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: var(--color-primary);
+        margin: 1.5rem 0 1rem 0;
+      }
+
+      /* Responsive adjustments for accordion */
+      @media (max-width: 768px) {
+        .exp-meta {
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+      }
+
+      /* Custom styles for ISTQB logo alignment */
+      .istqb-title-with-logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem; /* Add some gap between icon, text and logo */
+      }
+
+      .istqb-small-logo {
+        height: 47px; /* Adjust as needed */
+        width: auto;
+      }
+
+      /* Ajout du style "Card" pour les tableaux de compétences */
+      .skills-table {
+        background-color: var(--color-white, #fff); /* Fallback blanc */
+        border: 1px solid var(--color-border, #e5e7eb); /* Fallback gris clair */
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        /* Ombre douce similaire aux autres blocs */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+
+      /* Optionnel : effet au survol pour harmoniser avec le reste */
+      .skills-table:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease;
+      }
+
+      /* --- STYLE DES 3 PILIERS DE COMPETENCES --- */
+      .skills-focus-container {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(300px, 1fr)
+        ); /* Responsive */
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .skill-pillar {
+        background: var(--color-white);
+        border: 1px solid var(--color-border);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-top: 5px solid var(--color-primary); /* Ligne de couleur en haut */
+      }
+
+      .skill-pillar:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      .pillar-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #f3f4f6;
+      }
+
+      .pillar-icon {
+        color: var(--color-primary);
+        width: 32px;
+        height: 32px;
+      }
+
+      .pillar-header h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--color-text);
+        margin: 0;
+      }
+
+      .pillar-intro {
+        font-size: 0.95rem;
+        color: var(--color-text-light);
+        margin-bottom: 1rem;
+        font-style: italic;
+      }
+
+      .pillar-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .pillar-list li {
+        margin-bottom: 0.75rem;
+        padding-left: 1.25rem;
+        position: relative;
+        line-height: 1.5;
+      }
+
+      .pillar-list li::before {
+        content: "•";
+        color: var(--color-accent);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      /* Nuage de tags pour la partie technique */
+      .tech-category {
+        margin-bottom: 1rem;
+      }
+      .tech-category strong {
+        display: block;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        color: var(--color-text-light);
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.05em;
+      }
+
+      .tech-tags-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tech-tags-cloud span {
+        background-color: #f3f4f6;
+        color: #374151;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid #e5e7eb;
+      }
+
+      /* --- STYLE DES BADGES DANS L'EXPÉRIENCE --- */
+      .experience-tech-stack {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px dashed var(--color-border);
+      }
+
+      .tech-label {
+        display: block;
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        color: var(--color-primary);
+        text-transform: uppercase;
+      }
+
+      .tech-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .badge {
+        background-color: rgba(37, 99, 235, 0.1); /* Bleu très clair */
+        color: var(--color-primary); /* Bleu principal */
+        border: 1px solid rgba(37, 99, 235, 0.2);
+        padding: 0.25rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Céline DEMONGEOT",
+          "jobTitle": "Ingénieur QA / Test & Validation (Certifiée ISTQB)",
+          "description": "Expertise en qualification logicielle, firmware, systèmes IoT et intégration continue.",
+          "url": "https://cv.demongeot.org",
+          "image": "https://cv.demongeot.org/assets/images/photo.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "32 avenue de Provence, Pure Provence A02",
+            "addressLocality": "Fuveau",
+            "postalCode": "13710",
+            "addressCountry": "FR"
+          },
+          "email": "celine@demongeot.org",
+          "telephone": "+33-6-88-90-90-59",
+          "alumniOf": [
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "IUP d'Avignon"
+            },
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "Université Aix-Marseille III"
+            }
+          ],
+          "knowsAbout": [
+            "QA",
+            "Test & Validation",
+            "ISTQB",
+            "IoT",
+            "Selenium",
+            "Python",
+            "C++",
+            "Jira"
+          ]
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Header & Navigation -->
+    <header class="sticky-header">
+      <nav class="container">
+        <a href="#hero" class="logo">CÉLINE DEMONGEOT</a>
+        <div class="nav-links">
+          <a href="#about">Mon Profil</a>
+          <a href="#experience">Expérience</a>
+          <a href="#skills">Compétences</a>
+          <a href="#contact" class="btn-contact">Contact</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="hero-label">Profil Professionnel & CV</p>
+            <h1 class="hero-title">Céline DEMONGEOT</h1>
+            <h2 class="hero-subtitle">
+              Ingénieur Test & Validation, certifiée ISTQB
+            </h2>
+            <p class="hero-text">
+              Passionnée par l'informatique et soucieuse de la qualité des
+              produits, j'ai consacré deux décennies au Test et à la Validation,
+              assurant l'excellence logicielle, firmware et système sur des
+              projets techniques et innovants.
+            </p>
+            <div class="hero-buttons">
+              <a href="#experience" class="btn btn-primary">
+                <i data-lucide="chevrons-down"></i>
+                <span>Explorer mon parcours</span>
+              </a>
+              <a
+                href="assets/documents/CV_de_Celine_DEMONGEOT.pdf"
+                target="_blank"
+                rel="noopener"
+                title="Télécharger le CV au format PDF"
+                class="btn btn-secondary"
+              >
+                <i data-lucide="download"></i>
+                <span>Télécharger le CV</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-aside">
+            <div class="profile-photo">
+              <img
+                src="assets/images/photo.jpg"
+                alt="Photo de Céline DEMONGEOT"
+              />
+            </div>
+
+            <a
+              href="https://www.gasq.org/fr/inscription/expert/a539edcb-6f65-42db-a53b-391a56a79e64.html"
+              target="_blank"
+              rel="noopener"
+              class="istqb-card"
+              style="text-decoration: none; color: inherit; display: block"
+            >
+              <h3 class="card-title istqb-title-with-logo">
+                <i data-lucide="award"></i>
+                Certifications ISTQB
+                <img
+                  src="assets/images/istqb.png"
+                  alt="Logo ISTQB"
+                  class="istqb-small-logo"
+                />
+              </h3>
+              <ul class="certification-list">
+                <li>
+                  <span>Foundation (10/2017)</span
+                  ><i data-lucide="check-circle"></i>
+                </li>
+                <li>
+                  <span>Test Manager (12/2017)</span
+                  ><i data-lucide="check-circle"></i>
+                </li>
+                <li>
+                  <span>Test Analyst (12/2017)</span
+                  ><i data-lucide="check-circle"></i>
+                </li>
+                <li>
+                  <span>Agile Tester (04/2018)</span
+                  ><i data-lucide="check-circle"></i>
+                </li>
+                <li>
+                  <span>Technical Test Analyst (06/2018)</span
+                  ><i data-lucide="check-circle"></i>
+                </li>
+              </ul>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <div class="container about-grid">
+          <div class="about-content">
+            <h2 class="section-title">Mon Profil : Expertise et Passion</h2>
+            <p class="lead-text">
+              J'ai commencé ma carrière en tant que développeur avant de
+              m'orienter vers le test et la validation il y a 20 ans. Cette
+              activité me passionne car elle est au cœur de la qualité produit.
+              C’est pourquoi après 13 ans dans ce domaine, j’ai passé 5
+              certifications ISTQB.
+            </p>
+            <p class="lead-text">
+              Mon parcours m'a permis d'acquérir une expertise solide en IVVQ
+              (Intégration, Vérification, Validation, Qualification) de systèmes
+              complexes, allant des microcontrôleurs et protocoles NFC/sans
+              contact aux solutions IOT, aux solutions logicielles de GMAO ou
+              encore aux Liaisons de Données Tactiques.
+            </p>
+
+            <div class="contact-card">
+              <h3 class="card-subtitle">
+                <i data-lucide="map-pin"></i>
+                Localisation & Coordonnées
+              </h3>
+              <div class="contact-info">
+                <p>
+                  <strong>Adresse:</strong> Pure Provence A02, 32 avenue de
+                  Provence, 13710 FUVEAU
+                </p>
+                <p><strong>Téléphone:</strong> 06 88 90 90 59</p>
+                <p><strong>Email:</strong> celine@demongeot.org</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-sidebar">
+            <div class="education-section">
+              <h3 class="section-subtitle">
+                <i data-lucide="graduation-cap"></i>
+                Formation Académique
+              </h3>
+              <div class="education-list">
+                <div class="education-item">
+                  <p class="education-title">
+                    Diplôme d'ingénieur maître Génie Mathématiques et
+                    Informatique
+                  </p>
+                  <p class="education-meta">IUP d'Avignon - 2002</p>
+                </div>
+                <div class="education-item">
+                  <p class="education-title">DEUG MIAS</p>
+                  <p class="education-meta">
+                    Université Aix-Marseille III, Aix en Provence - 1999
+                  </p>
+                </div>
+                <div class="education-item">
+                  <p class="education-title">Bac S option Mathématiques</p>
+                  <p class="education-meta">Aix en Provence - 1996</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="interests-section">
+              <h3 class="section-subtitle">
+                <i data-lucide="heart"></i>
+                Centres d'Intérêt
+              </h3>
+              <div class="interests-grid">
+                <div class="interest-card">
+                  <i data-lucide="laptop-2"></i>
+                  <p class="interest-title">Informatique</p>
+                  <p class="interest-desc">
+                    Domotique, Arduino, Raspberry, dev android...
+                  </p>
+                </div>
+                <div class="interest-card">
+                  <i data-lucide="sailboat"></i>
+                  <p class="interest-title">Voile</p>
+                  <p class="interest-desc">
+                    Monitorat fédéral de voile depuis 1996, compétition (33ème
+                    française en planche à voile en 2004).
+                  </p>
+                </div>
+                <div class="interest-card">
+                  <i data-lucide="music"></i>
+                  <p class="interest-title">Musique</p>
+                  <p class="interest-desc">
+                    Clarinette en ensemble depuis 35 ans, Saxophone.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="experience-section">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-label">20+ années d'excellence en QA</p>
+            <h2 class="section-title-large">Parcours Professionnel</h2>
+          </header>
+
+          <div class="timeline">
+            <!-- CS Group -->
+            <article class="timeline-item" id="csgroup">
+              <div class="timeline-content">
+                <!-- HEADER -->
+                <div
+                  class="timeline-header"
+                  onclick="toggleTimeline('csgroup')"
+                >
+                  <div class="company-logo">
+                    <img
+                      src="assets/images/csgroup.png"
+                      alt="Logo CS Group"
+                      loading="lazy"
+                      onerror="this.style.display='none'"
+                    />
+                  </div>
+
+                  <div class="exp-meta">
+                    <h3 class="timeline-title">
+                      CS Group - Ingénieur Intégration Vérification Validation
+                      Système (Défense & Sécurité)
+                    </h3>
+                    <span class="timeline-date">2023 - 2025</span>
+                  </div>
+
+                  <div class="timeline-summary">
+                    <p>
+                      Validation du système PCO-L16 (Liaisons de Données
+                      Tactiques). Garantie de la conformité opérationnelle dans
+                      un environnement critique.
+                    </p>
+                  </div>
+
+                  <p class="click-hint">
+                    ▼ Cliquez pour voir les détails complets
+                  </p>
+                </div>
+
+                <!-- DETAILS -->
+                <div class="timeline-details">
+                  <div class="timeline-details-inner">
+                    <p>
+                      Intégrée au projet stratégique PCO L16 (Première Capacité
+                      Opérationnelle), j'assurais l'intégration et la
+                      qualification globale du système de communication
+                      tactique.
+                    </p>
+
+                    <ul>
+                      <li>
+                        <strong>Ingénierie de Test :</strong> Élaboration de la
+                        stratégie de validation et rédaction des plans de tests
+                        d'intégration système et des scénarios (IVVQ).
+                      </li>
+                      <li>
+                        <strong>Gestion d'Environnements :</strong>
+                        Administration et configuration des plateformes de test
+                        (Usine et Site Client), déploiement de versions et
+                        gestion de configuration.
+                      </li>
+                      <li>
+                        <strong>Exécution & Analyse :</strong> Déroulement des
+                        campagnes de tests, analyse de logs, investigation des
+                        non-conformités et validation des correctifs.
+                      </li>
+                      <li>
+                        <strong>Suivi Qualité :</strong> Gestion du cycle de vie
+                        des anomalies sous Redmine et reporting d'avancement
+                        auprès de la direction de projet.
+                      </li>
+                      <li>
+                        <strong>Relation Client :</strong> Conduite des recettes
+                        usine avec le client et formation des utilisateurs
+                        finaux.
+                      </li>
+                    </ul>
+
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge">Redmine</span>
+                        <span class="badge"
+                          >Liaisons de Données Tactiques (L16, L11B, JRE)</span
+                        >
+                        <span class="badge">Wireshark</span>
+                        <span class="badge">Intégration Système</span>
+                        <span class="badge">Défense</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- EDITAG -->
+            <article class="timeline-item" id="editag">
+              <div class="timeline-content">
+                <!-- HEADER -->
+                <div class="timeline-header" onclick="toggleTimeline('editag')">
+                  <div class="company-logo">
+                    <img
+                      src="assets/images/logoEditag.png"
+                      alt="Logo Editag"
+                      loading="lazy"
+                      onerror="this.style.display='none'"
+                    />
+                  </div>
+
+                  <div class="exp-meta">
+                    <h3 class="timeline-title">
+                      EDITAG - Ingénieur Test & Validation (IoT Industriel)
+                    </h3>
+                    <span class="timeline-date">2019 - 2023</span>
+                  </div>
+
+                  <div class="timeline-summary">
+                    <p>
+                      Validation transverse de solutions IoT. Expertise sur la
+                      chaîne complète :
+                      <strong>Firmware</strong> (capteurs),
+                      <strong>Protocoles</strong> (Radio/Réseau) et
+                      <strong>Software</strong> (Supervision).
+                    </p>
+                  </div>
+
+                  <p class="click-hint">
+                    ▼ Cliquez pour voir les détails complets
+                  </p>
+                </div>
+
+                <!-- DETAILS -->
+                <div class="timeline-details">
+                  <div class="timeline-details-inner">
+                    <p>
+                      De septembre 2019 à décembre 2023, j'étais responsable de
+                      la qualité sur 2 projets industriels IOT :
+                      <strong>une solution de picking sans fil</strong> et
+                      <strong>une solution de suivi et de localisation</strong>
+                      J'ai assuré la validation d'une architecture complexe
+                      mêlant contraintes matérielles et logicielles.
+                      <br />
+
+                      Ces 2 projets ont des points communs : Un logiciel
+                      "Lokeos" qui pilote toute la solution et qui peut
+                      s'interfacer avec d'autres logiciels (MES, ERP ...). Des
+                      capteurs et autres objets qui communiquent essentiellement
+                      par radio à des bases reliées au réseau de Lokeos. Pour
+                      ces 2 projets, que ce soit au niveau du firmware des
+                      capteurs ou autres objets connectés, au niveau des
+                      interfaces (API REST, MQTT, ...) ou au niveau du logiciel
+                      Lokeos.
+                    </p>
+                    <ul>
+                      <li>
+                        <strong>Validation End-to-End (E2E) :</strong>
+                        Vérification de l'intégrité des données sur toute la
+                        chaîne d'acquisition : Capteurs → Base Radio → Serveur →
+                        Interface Utilisateur (Lokeos).
+                      </li>
+                      <li>
+                        <strong>Test Embarqué & Radio :</strong> Qualification
+                        des firmwares capteurs et validation de la robustesse
+                        des protocoles de communication (LoRa, RTLS, et
+                        protocole propriétaire).
+                      </li>
+                      <li>
+                        <strong>Interopérabilité :</strong> Validation des API
+                        (REST, MQTT) pour garantir la bonne intégration de la
+                        solution avec les systèmes tiers des clients (ERP, MES).
+                      </li>
+                      <li>
+                        <strong>Stratégie de Test :</strong> Définition des
+                        plans de tests, création des jeux de données et
+                        rédaction des scénarios de validation fonctionnelle et
+                        technique.
+                      </li>
+                      <li>
+                        <strong>Suivi des Anomalies :</strong> Analyse technique
+                        des bugs (logs serveurs, trames radio), reproduction
+                        complexe et suivi des correctifs sous Redmine.
+                      </li>
+                    </ul>
+
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge">Redmine</span>
+                        <span class="badge">RADIO</span>
+                        <span class="badge">LORA</span>
+                        <span class="badge">RTLS</span>
+                        <span class="badge">REST</span>
+                        <span class="badge">MQTT</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- CITEGESTION -->
+            <article class="timeline-item" id="citegestion">
+              <div class="timeline-content">
+                <!-- HEADER -->
+                <div
+                  class="timeline-header"
+                  onclick="toggleTimeline('citegestion')"
+                >
+                  <div class="company-logo">
+                    <img
+                      src="assets/images/logoCitegestion.png"
+                      alt="Logo Citegestion"
+                      loading="lazy"
+                      onerror="this.style.display='none'"
+                    />
+                  </div>
+
+                  <div class="exp-meta">
+                    <h3 class="timeline-title">
+                      Citégestion | Citelum | EDF - Ingénieur Test & Validation
+                    </h3>
+                    <span class="timeline-date">2017 - 2019</span>
+                  </div>
+
+                  <div class="timeline-summary">
+                    <p>
+                      Test et validation d’un logiciel de GMAO pour patrimoines
+                      urbains : éclairages publics, signalisations tricolores,
+                      mobiliers de la voirie, ...
+                    </p>
+                  </div>
+
+                  <p class="click-hint">
+                    ▼ Cliquez pour voir les détails complets
+                  </p>
+                </div>
+
+                <!-- DETAILS -->
+                <div class="timeline-details">
+                  <div class="timeline-details-inner">
+                    <p>
+                      Entre novembre 2017 et septembre 2019, j'étais employée
+                      chez Citegestion : une filiale d'EDF, éditeur de logiciel,
+                      spécialisée dans la gestion du patrimoine urbain.
+                      Citégestion développait un outil de GMAO (Gestion de
+                      Maintenance Assistée par Ordinateur) dédié à la gestion
+                      d’éclairage public et de la signalisation tricolore. Avec
+                      les autres testeurs de l'équipe, mon rôle consistait à
+                      faire le <strong>test fonctionnel</strong> de la
+                      plateforme digitale
+                      <strong>"MUSE"</strong>
+                      : test de <strong>l'interface web</strong>, de
+                      <strong>l'application android</strong> et de
+                      <strong>l'application PC</strong>.
+                    </p>
+
+                    <ul>
+                      <li>
+                        <strong>Méthodologie Agile / Scrum :</strong>
+                        Participation active aux rituels (Daily, Sprint
+                        Planning, Retro), affinage des User Stories et
+                        définition des critères d'acceptation.
+                      </li>
+                      <li>
+                        <strong>Stratégie de Test :</strong> Création de plans
+                        de test et conception de scénarios pour la plateforme
+                        web "MUSE" et son application mobile Android.
+                      </li>
+                      <li>
+                        <strong>Automatisation :</strong> Développement de
+                        scripts pour automatiser les tests de non-régression
+                        (SmartBear TestComplete).
+                      </li>
+                      <li>
+                        <strong>Exécution & Reporting :</strong> Déroulement des
+                        campagnes de tests fonctionnels, analyse des résultats
+                        et rédaction des bilans de qualité.
+                      </li>
+                      <li>
+                        <strong>Gestion des défauts :</strong> Documentation
+                        précise des anomalies et suivi du cycle de vie sous HP
+                        ALM.
+                      </li>
+                    </ul>
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge">HP ALM</span>
+                        <span class="badge">Méthodologie Agile</span>
+                        <span class="badge">SMARTBEAR TEST COMPLETE</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- INTEL -->
+            <article class="timeline-item" id="intel">
+              <div class="timeline-content">
+                <!-- HEADER -->
+                <div class="timeline-header" onclick="toggleTimeline('intel')">
+                  <div class="company-logo">
+                    <img
+                      src="assets/images/logoIntel.png"
+                      alt="Logo Intel"
+                      loading="lazy"
+                      onerror="this.style.display='none'"
+                    />
+                  </div>
+
+                  <div class="exp-meta">
+                    <h3 class="timeline-title">
+                      INTEL - Ingénieur Test & Validation
+                    </h3>
+                    <span class="timeline-date">2014 - 2017</span>
+                  </div>
+
+                  <div class="timeline-summary">
+                    <p>
+                      Validation des contrôleurs NFC pour le marché mobile.
+                      Industrialisation des tests via
+                      <strong>automatisation Python</strong> et conformité aux
+                      standards <strong>NFC Forum / EMVCo</strong>.
+                    </p>
+                  </div>
+
+                  <p class="click-hint">
+                    ▼ Cliquez pour voir les détails complets
+                  </p>
+                </div>
+
+                <!-- DETAILS -->
+                <div class="timeline-details">
+                  <div class="timeline-details-inner">
+                    <p>
+                      En juin 2014, Intel a racheté à Inside Secure toute
+                      l'activité NFC. Etant donné que je travaillais sur les
+                      <strong>puces NFC</strong>, j'ai fait partie du rachat
+                      avec une trentaine de mes collègues. Suite à la fermeture
+                      des sites Intel en 2017, j'ai saisi l'opportunité du plan
+                      de départ pour valider mes 13 années d'expérience par
+                      <strong>5 certifications ISTQB</strong>, consolidant ainsi
+                      mon expertise terrain par la théorie reconnue
+                      internationalement. Durant mon passage chez INTEL entre
+                      juin 2014 et novembre 2017, j'ai continué à faire ce que
+                      je faisais chez Inside mais seulement sur les
+                      <strong>puces NFC</strong>.
+                    </p>
+                    <ul>
+                      <li>
+                        <strong>Stratégie de Test :</strong> Définition des
+                        plans de tests, création des jeux de données et
+                        rédaction des scénarios de validation fonctionnelle et
+                        technique.
+                      </li>
+                      <li>
+                        <strong>Automatisation des Tests :</strong>
+                        Développement et maintenance de scripts de test en
+                        <strong>Python</strong> pour l'exécution automatique des
+                        campagnes de non-régression.
+                      </li>
+                      <li>
+                        <strong>Validation Protocolaire :</strong> Vérification
+                        de la conformité aux normes sans contact (ISO-14443 A/B,
+                        ISO-15693) et bancaires (EMV).
+                      </li>
+                      <li>
+                        <strong>Certification :</strong> Préparation des
+                        produits pour les certifications NFC Forum et EMVCo
+                        (Debug sur bancs officiels Micropross/Keolabs).
+                      </li>
+                      <li>
+                        <strong>Analyse Technique :</strong> Investigation bas
+                        niveau (traces spy, analyseurs logiques) pour résoudre
+                        les problèmes d'interopérabilité.
+                      </li>
+                    </ul>
+
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge">Cartes à puce</span>
+                        <span class="badge">EMVCo</span>
+                        <span class="badge">ISO-7816</span>
+                        <span class="badge">ISO-14443</span>
+                        <span class="badge">ISO-10373</span>
+                        <span class="badge">ISO-15693</span>
+                        <span class="badge">CLEARQUEST</span>
+                        <span class="badge">Micropross</span>
+                        <span class="badge">Keolabs</span>
+                        <span class="badge">Python</span>
+                        <span class="badge">NFC / RFID</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Inside -->
+            <article class="timeline-item" id="inside">
+              <div class="timeline-content">
+                <!-- HEADER -->
+                <div class="timeline-header" onclick="toggleTimeline('inside')">
+                  <div class="company-logo">
+                    <img
+                      src="assets/images/logoInside.png"
+                      alt="Logo Inside"
+                      loading="lazy"
+                      onerror="this.style.display='none'"
+                    />
+                  </div>
+
+                  <div class="exp-meta">
+                    <h3 class="timeline-title">
+                      Inside Secure - Ingénieur Test & Validation
+                    </h3>
+                    <span class="timeline-date">2008 - 2014</span>
+                  </div>
+
+                  <div class="timeline-summary">
+                    <p>
+                      Double compétence : Validation du protocole des composants
+                      sécurisés (SmartCard/NFC) et
+                      <strong>Développement C++/C#</strong> d'outils de test
+                      internes pour l'équipe R&D.
+                    </p>
+                  </div>
+
+                  <p class="click-hint">
+                    ▼ Cliquez pour voir les détails complets
+                  </p>
+                </div>
+
+                <!-- DETAILS -->
+                <div class="timeline-details">
+                  <div class="timeline-details-inner">
+                    <p>
+                      Entre juillet 2008 et juin 2014, j'étais employée chez
+                      Inside Contactless. Je faisais partie de 2 équipes :
+                    </p>
+                    <ul>
+                      <li>
+                        La plupart du temps au sein de l'équipe R&D, j'étais
+                        responsable des test protocolaires sur tous les produits
+                        (cartes contact et contactless).
+                      </li>
+                      <ul>
+                        <li><strong>Création de plans de test</strong></li>
+                        <li>
+                          <strong
+                            >Ecriture des scénarios (en Python, C++ ou
+                            C#)</strong
+                          >
+                        </li>
+                        <li>
+                          <strong
+                            >Exécution de tests à l'aide d'outils existants
+                            (Micropross et ProxyLab essentiellement)</strong
+                          >
+                        </li>
+                        <li><strong>Analyse des résultats</strong></li>
+                        <li><strong>Rédaction de rapports de tests</strong></li>
+                        <li>
+                          <strong
+                            >Rédaction et suivi des fiches d'anomalies</strong
+                          >
+                        </li>
+                      </ul>
+                      <li>
+                        Quelques fois j'intégrais l'équipe Outil, j'aidais au
+                        développement d'outils que je pouvais ensuite utiliser
+                        dans mon activité de test en R&D.
+                      </li>
+                      <ul>
+                        <li>
+                          <strong>Développement en Visual C++ et en C#</strong>
+                        </li>
+                      </ul>
+                    </ul>
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge">Smart Cards</span>
+                        <span class="badge">EMV</span>
+                        <span class="badge">ISO-7816</span>
+                        <span class="badge">ISO-14443</span>
+                        <span class="badge">ISO-10373</span>
+                        <span class="badge">ISO-15693</span>
+                        <span class="badge">MANTIS</span>
+                        <span class="badge">JIRA</span>
+                        <span class="badge">VISUAL C++</span>
+                        <span class="badge">C++ / C#</span>
+                        <span class="badge">PYTHON</span>
+                        <span class="badge">Micropross</span>
+                        <span class="badge">Keolabs</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- GFI -->
+            <article class="timeline-item" id="gfi">
+              <div class="timeline-content">
+                <!-- HEADER -->
+                <div class="timeline-header" onclick="toggleTimeline('gfi')">
+                  <div class="company-logo">
+                    <img
+                      src="assets/images/logogfi.gif"
+                      alt="Logo GFI"
+                      loading="lazy"
+                      onerror="this.style.display='none'"
+                    />
+                  </div>
+
+                  <div class="exp-meta">
+                    <h3 class="timeline-title">
+                      GFI - Ingénieur Test & Validation, missionnée chez
+                      différents clients :
+                    </h3>
+                    <span class="timeline-date">2005 - 2008</span>
+                  </div>
+
+                  <div class="timeline-summary">
+                    <ul>
+                      <li>
+                        <strong>GEMPLUS : </strong>Développement de programmes
+                        d’initialisation et de tests de cartes à puce.
+                      </li>
+                      <li>
+                        <strong>H3S : </strong>Recette fonctionnelle d’une
+                        application WEB de publication d’annonces immobilières.
+                      </li>
+                      <li>
+                        <strong>Ingénico - Banque Accord : </strong
+                        >Développement de procédures d'impression de tickets
+                        carte bleue.
+                      </li>
+                      <li>
+                        <strong>Inside Contactless : </strong>Test protocolaires
+                        sur des cartes contact et contactless.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <p class="click-hint">
+                    ▼ Cliquez pour voir les détails complets
+                  </p>
+                </div>
+
+                <!-- DETAILS -->
+                <div class="timeline-details">
+                  <div class="timeline-details-inner">
+                    <p>
+                      Entre avril 2005 et juillet 2008, j'étais employée chez
+                      GFI Informatique : société de service en informatique.
+                      J'ai travaillé sur 4 missions :
+                    </p>
+                    <br />
+                    <hr />
+                    <br />
+                    <div class="company-logo">
+                      <img
+                        src="assets/images/logoInside.png"
+                        alt="Logo Inside"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                      />
+                    </div>
+                    <p>
+                      <strong>Quatrième mission</strong> chez Inside Contactless
+                      (de juillet 2007 jusqu'à mon embauche chez Inside en
+                      juillet 2008) :
+                      <br />
+                      <strong>Test protocolaires</strong> sur des cartes contact
+                      et contactless.
+                    </p>
+                    <ul>
+                      <li>
+                        <strong
+                          >Exécution de tests à l'aide d'outils
+                          existants</strong
+                        >
+                      </li>
+                      <li><strong>Développement sous Visual C++</strong></li>
+                      <li><strong>Rédaction de rapports de tests</strong></li>
+                    </ul>
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge">Cartes à puce</span>
+                        <span class="badge">EMV</span>
+                        <span class="badge">ISO-7816</span>
+                        <span class="badge">ISO-14443</span>
+                        <span class="badge">ISO-10373</span>
+                        <span class="badge">ISO-15693</span>
+                        <span class="badge">MANTIS</span>
+                        <span class="badge">JIRA</span>
+                        <span class="badge">VISUAL C++</span>
+                        <span class="badge">C#</span>
+                        <span class="badge">PYTHON</span>
+                        <span class="badge">Micropross</span>
+                        <span class="badge">Keolabs</span>
+                      </div>
+                    </div>
+                    <br />
+                    <hr />
+                    <br />
+                    <div class="company-logo">
+                      <img
+                        src="assets/images/smiley-baby.png"
+                        alt="Bébé fille"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                      />
+                    </div>
+                    <p>
+                      Petite pause de février 2007 à juin 2007 pour la mise au
+                      monde de ma fille ...
+                    </p>
+                    <br />
+                    <hr />
+                    <br />
+                    <div class="company-logo">
+                      <img
+                        src="assets/images/logoIngenico.png"
+                        alt="Logo Ingenico"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                      />
+                    </div>
+                    <p>
+                      <strong>Troisième mission</strong> pour Ingénico - Banque
+                      Accord (Décembre 2006 à janvier 2007) : Développement en
+                      C++ de procédures d'impression de tickets carte bleue.
+                    </p>
+                    <ul>
+                      <li>Utilisation d'un terminal ingénico</li>
+                    </ul>
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge">C++</span>
+                      </div>
+                    </div>
+                    <br />
+                    <hr />
+                    <br />
+
+                    <div class="company-logo">
+                      <img
+                        src="assets/images/H3S.jpg"
+                        alt="Logo H3S"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                      />
+                    </div>
+                    <p>
+                      <strong>Seconde mission</strong> chez H3S (Octobre 2006 à
+                      novembre 2006) :
+                      <br />
+                      <strong>
+                        Recette fonctionnelle d’une application WEB</strong
+                      >
+                      de publication d’annonces immobilières permettant la
+                      gestion du flux complet de la création jusqu’à la
+                      publication.
+                    </p>
+                    <br />
+                    <ul>
+                      <li>
+                        Validation à partir des spécifications fonctionnelles
+                      </li>
+                      <li>Back office commerce, studio et administration</li>
+                      <li>Déroulement des jeux de tests.</li>
+                    </ul>
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge">MANTIS</span>
+                      </div>
+                    </div>
+                    <br />
+                    <hr />
+                    <br />
+                    <div class="company-logo">
+                      <img
+                        src="assets/images/logogemplus.gif"
+                        alt="Logo Gemplus"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                      />
+                    </div>
+                    <p>
+                      <strong>Premiere mission</strong> chez Gemalto
+                      (anciennement Gemplus) (Avril 2005 à septembre 2006) :
+                      <br />
+                      <strong
+                        >Développement de programmes d'initialisation et de
+                        tests de cartes à puce.</strong
+                      >
+                    </p>
+                    <ul>
+                      <li>
+                        Prise en charge de l’intégralité des produits Banking /
+                        ID security; ( GemShare, GemVision, GemOnline… ) et des
+                        normes associées comme EMV et MPCOS.
+                      </li>
+                      <li>
+                        Support sur tous les produits Banking/ID security; et
+                        GSM aux équipes de l’ensemble des sites de production et
+                        notamment de l’équipe de développement de Singapour.
+                      </li>
+                      <li>
+                        Mise ou point des spécifications en collaboration avec
+                        les Product Engineer.
+                      </li>
+                      <li>
+                        Développement C/Windows et Pascal/Dos des programmes
+                        d’initialisation/ test des cartes dans l’environnement
+                        de supervision et de programmation EISM.
+                      </li>
+                      <li>
+                        Chargement en ROM des applets natives et Javacard.
+                      </li>
+                      <li>
+                        Vérification des cartes, contrôles du chargement des
+                        applets, validation du code Javacard compilé.
+                      </li>
+                      <li>
+                        Développement d’un composant en Java pour la plate-forme
+                        de Data Processing « Gemsense » générant les données
+                        d’initialisation des cartes Sesame Vitale II.
+                      </li>
+                      <li>
+                        Test dans le respect des exigences production et
+                        rédaction des documentations en anglais.
+                      </li>
+                    </ul>
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge">Cartes à puce</span>
+                        <span class="badge">EMV</span>
+                        <span class="badge">ISO-7816</span>
+                        <span class="badge">Turbo Pascal</span>
+                        <span class="badge">JAVA</span>
+                        <span class="badge">ECLIPSE</span>
+                        <span class="badge">PVCS</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- DIGITECH -->
+            <article class="timeline-item" id="digitech">
+              <div class="timeline-content">
+                <!-- HEADER -->
+                <div
+                  class="timeline-header"
+                  onclick="toggleTimeline('digitech')"
+                >
+                  <div class="company-logo">
+                    <img
+                      src="assets/images/logodigitech.gif"
+                      alt="Logo Digitech"
+                      loading="lazy"
+                      onerror="this.style.display='none'"
+                    />
+                  </div>
+
+                  <div class="exp-meta">
+                    <h3 class="timeline-title">
+                      DIGITECH - Ingénieur Développement
+                    </h3>
+                    <span class="timeline-date">2004 - 2005</span>
+                  </div>
+
+                  <div class="timeline-summary">
+                    <p>
+                      Développement de chaînes de production pour la
+                      numérisation et la reconnaissance automatique de documents
+                      et maintenance de logiciels existants. Travail sur 3 gros
+                      projets :
+                    </p>
+                    <ul>
+                      <li>
+                        Traitement des Liasses Fiscales pour les centres des
+                        impôts (France)
+                      </li>
+                      <li>Recensement de la population du Maroc</li>
+                      <li>
+                        Dématérialisation de microfilms contenant des actes
+                        hypothécaires pour la DGI
+                      </li>
+                    </ul>
+                  </div>
+
+                  <p class="click-hint">
+                    ▼ Cliquez pour voir les détails complets
+                  </p>
+                </div>
+
+                <!-- DETAILS -->
+                <div class="timeline-details">
+                  <div class="timeline-details-inner">
+                    <p>
+                      Entre avril 2004 et avril 2005, j'étais employée chez
+                      <strong>DIGITECH</strong> : société qui fabrique des
+                      outils de lecture automatique de documents.
+                    </p>
+
+                    <p>
+                      J'ai fait essentiellement du développement et de
+                      l'intégration. J'ai programmé des outils de lecture
+                      automatique de documents qui servent à numériser des
+                      documents « papier » et à sauver les données qu'ils
+                      contiennent en un format « numérique ».
+                    </p>
+
+                    <p>Les développements étaient faits sous Visual C++.</p>
+
+                    <p class="section-subtitle-sm">
+                      Ce que j'ai fait chez DIGITECH :
+                    </p>
+
+                    <ul>
+                      <li>
+                        <strong
+                          >Pour la DGI (Direction Générale des Impôts)</strong
+                        >
+                        <ul>
+                          <li>
+                            <strong>Projet Digilad32</strong> : Numérisation des
+                            liasses fiscales, traitement et sauvegarde des
+                            données recueillies.
+                            <ul>
+                              <li>Développement d'un module de statistiques</li>
+                              <li>
+                                Ajout de fonctionnalités de configuration
+                                automatique des scanners
+                              </li>
+                              <li>Installation chez le client</li>
+                              <li>
+                                Modification du programme pour permettre de
+                                scanner des liasses fiscales incomplètes
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <strong>Projet MSS</strong> : Numérisation de
+                            microfilms contenant des actes hypothécaires.
+                            <ul>
+                              <li>
+                                Aide au choix de la configuration du scanner
+                              </li>
+                              <li>Traitement automatique des images</li>
+                              <li>Suppression des versos vierges</li>
+                              <li>Administration</li>
+                              <li>Statistiques</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <strong
+                          >Pour le recensement de la population du Maroc</strong
+                        >
+                        <ul>
+                          <li>
+                            <strong>Projet RGPH</strong>
+                            <ul>
+                              <li>Rédaction de spécifications</li>
+                              <li>Développement d'un module de statistiques</li>
+                              <li>
+                                Développement d'un module de corrections
+                                inter-documents
+                              </li>
+                              <li>
+                                Développement de divers outils d'administration
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge">VISUAL C++</span>
+                        <span class="badge">SQL</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- STIL -->
+            <article class="timeline-item" id="stil">
+              <div class="timeline-content">
+                <!-- HEADER -->
+                <div class="timeline-header" onclick="toggleTimeline('stil')">
+                  <div class="company-logo">
+                    <img
+                      src="assets/images/logostil.gif"
+                      alt="Logo STIL"
+                      loading="lazy"
+                      onerror="this.style.display='none'"
+                    />
+                  </div>
+
+                  <div class="exp-meta">
+                    <h3 class="timeline-title">STIL - Informaticienne</h3>
+                    <span class="timeline-date">2002 - 2004</span>
+                  </div>
+
+                  <div class="timeline-summary">
+                    <p>
+                      Conception et réalisation de logiciels de numérisation 3D
+                      sans contact, d'utilitaires de calcul et de gestion des
+                      stocks.
+                    </p>
+                  </div>
+
+                  <p class="click-hint">
+                    ▼ Cliquez pour voir les détails complets
+                  </p>
+                </div>
+
+                <!-- DETAILS -->
+                <div class="timeline-details">
+                  <div class="timeline-details-inner">
+                    <p class="section-subtitle-sm">Missions principales :</p>
+                    <ul>
+                      <li>
+                        Maintenance du logiciel SurfaceMap (stations de
+                        numérisation 3D)
+                      </li>
+                      <li>Corrections logicielles aux défauts mécaniques</li>
+                      <li>Développement d'application de gestion des stocks</li>
+                      <li>
+                        Gestion du parc informatique et assistance utilisateurs
+                      </li>
+                    </ul>
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge">VISUAL C++</span>
+                        <span class="badge">SQL</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Stages -->
+            <article class="timeline-item" id="stages">
+              <div class="timeline-content">
+                <!-- HEADER -->
+                <div class="timeline-header" onclick="toggleTimeline('stages')">
+                  <div class="exp-meta">
+                    <h3 class="timeline-title">
+                      Développement logiciel - Lors de différents stages et
+                      projets
+                    </h3>
+                    <span class="timeline-date">2001 - 2002</span>
+                  </div>
+
+                  <div class="timeline-summary">
+                    <ul>
+                      <li>
+                        <strong>STIL : </strong>Développement d’un module
+                        logiciel de correction des défauts physiques d’une
+                        station de mesure et d’une application de base de
+                        données de gestion des stocks.
+                      </li>
+                      <li>
+                        <strong>CELAR : </strong>Etude du problème d’allocation
+                        de fréquences et développement d’un outil permettant de
+                        trouver et d’optimiser des solutions à ce problème.
+                      </li>
+                      <li>
+                        <strong>Digifrance : </strong>Développement d’un module
+                        additionnel à une suite logicielle de Télésecrétariat.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <p class="click-hint">
+                    ▼ Cliquez pour voir les détails complets
+                  </p>
+                </div>
+
+                <!-- DETAILS -->
+                <div class="timeline-details">
+                  <div class="timeline-details-inner">
+                    <p class="section-subtitle-sm">Stages et projets</p>
+
+                    <br />
+                    <div class="company-logo">
+                      <img
+                        src="assets/images/logostil.gif"
+                        alt="Logo Stil"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                      />
+                    </div>
+                    <p>
+                      De avril à septembre 2002, j'ai effectué mon stage de fin
+                      d'études de 6 mois chez STIL (Sciences et Techniques
+                      Industrielle de la Lumière) : société qui fabrique des
+                      outil optiques pour faire de la micro-mesure 3D sans
+                      contact.. Le but de mon stage était d'apporter des
+                      corrections logicielles aux défauts physiques de planéité
+                      des tables de déplacement des stations de mesure. J'ai
+                      également développé une application de gestion des stocks.
+                      Tous les développements ont été faits en visual C++.
+                    </p>
+
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge">VISUAL C++</span>
+                        <span class="badge">SQL</span>
+                      </div>
+                    </div>
+                    <br />
+                    <hr />
+                    <br />
+                    <p>
+                      De janvier à mars 2002, dans les locaux de l'IUP et sous
+                      la supervision des professeurs, j'ai travaillé pour le
+                      CELAR. Nous avons étudié le problème d'allocation de
+                      fréquences et nous avons développé un outil permettant de
+                      trouver et d'optimiser des solutions à ce problème.
+                    </p>
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge">C</span>
+                        <span class="badge">ILOG Solver</span>
+                      </div>
+                    </div>
+                    <br />
+                    <hr />
+                    <br />
+
+                    <div class="company-logo">
+                      <img
+                        src="assets/images/logodigifrance.gif"
+                        alt="Logo Digifrance"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                      />
+                    </div>
+                    <p>
+                      De juillet à septembre 2001, j'ai effectué un stage de 3
+                      mois chez Digifrance. Le but de mon stage était de
+                      développer un module additionnel à la suite logicielle
+                      TSAO (Télésecrétariat assisté par ordinateur). Les
+                      développements ont été effectués en Delphi.
+                    </p>
+                    <br />
+
+                    <div class="experience-tech-stack">
+                      <span class="tech-label">Compétences utilisées :</span>
+                      <div class="tech-badges">
+                        <span class="badge"> Delphi </span>
+                      </div>
+                    </div>
+                    <br />
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="skills-section">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-label">Outils & Expertise Technique</p>
+            <h2 class="section-title-large">Compétences Clés</h2>
+          </header>
+
+          <div class="skills-focus-container">
+            <div class="skill-pillar">
+              <div class="pillar-header">
+                <i data-lucide="shield-check" class="pillar-icon"></i>
+                <h3>Expertise QA & Fonctionnelle</h3>
+              </div>
+              <div class="pillar-content">
+                <p class="pillar-intro">
+                  Ma méthodologie pour garantir la qualité :
+                </p>
+                <ul class="pillar-list">
+                  <li>
+                    <strong>Stratégie de Test :</strong> Planification,
+                    conception et analyse de risques.
+                  </li>
+                  <li>
+                    <strong>Certifications :</strong> ISTQB (Foundation, Test
+                    Manager, Agile, Analyst).
+                  </li>
+                  <li>
+                    <strong>Cycle de vie :</strong> Gestion complète des
+                    anomalies (Jira, Redmine).
+                  </li>
+                  <li>
+                    <strong>Qualification :</strong> Multi-niveaux (Système,
+                    Logiciel, Firmware).
+                  </li>
+                  <li>
+                    <strong>Reporting :</strong> Métriques qualité, bilans et
+                    KPI.
+                  </li>
+                  <li>
+                    <strong>Transmission :</strong> Formation et support aux
+                    équipes et clients.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="skill-pillar">
+              <div class="pillar-header">
+                <i data-lucide="briefcase" class="pillar-icon"></i>
+                <h3>Domaines Métier & Produits</h3>
+              </div>
+              <div class="pillar-content">
+                <p class="pillar-intro">Les environnements où j'opère :</p>
+                <ul class="pillar-list">
+                  <li>
+                    <strong>IoT & Industrie :</strong> Solutions de picking,
+                    géolocalisation, capteurs.
+                  </li>
+                  <li>
+                    <strong>Défense :</strong> Liaisons de données tactiques
+                    (L11B, L16, JRE).
+                  </li>
+                  <li>
+                    <strong>Smart City :</strong> GMAO pour éclairage public et
+                    voirie.
+                  </li>
+                  <li>
+                    <strong>Cartes à puce / NFC :</strong> Paiement (EMV), Sans
+                    contact, RFID, Protocoles bas niveau (ISO-7816, 14443,
+                    15693).
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="skill-pillar">
+              <div class="pillar-header">
+                <i data-lucide="code-2" class="pillar-icon"></i>
+                <h3>Stack Technique & Outils</h3>
+              </div>
+              <div class="pillar-content">
+                <p class="pillar-intro">Mon arsenal technique :</p>
+
+                <div class="tech-category">
+                  <strong>Gestion & Test</strong>
+                  <div class="tech-tags-cloud">
+                    <span>Jira</span><span>Redmine</span><span>Mantis</span>
+                    <span>HP ALM</span><span>TestComplete</span
+                    ><span>Squash TM</span><span>TestLink</span>
+                  </div>
+                </div>
+
+                <div class="tech-category">
+                  <strong>Langages & Scripting</strong>
+                  <div class="tech-tags-cloud">
+                    <span>Python</span><span>C++</span><span>C#</span>
+                    <span>SQL</span><span>Delphi</span><span>Turbo Pascal</span>
+                  </div>
+                </div>
+
+                <div class="tech-category">
+                  <strong>Protocoles & Réseaux</strong>
+                  <div class="tech-tags-cloud">
+                    <span>MQTT</span><span>REST API</span><span>LoRa</span
+                    ><span>RTLS</span> <span>TCP/IP</span><span>Wireshark</span>
+                  </div>
+                </div>
+
+                <div class="tech-category">
+                  <strong>Méthodologie</strong>
+                  <div class="tech-tags-cloud">
+                    <span>Cycle en V</span><span>Agile</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="contact-wrapper">
+            <p class="section-label">Entrons en Contact</p>
+            <h2 class="section-title-large">Opportunité ou Question ?</h2>
+            <p class="contact-intro">
+              Pour discuter d'une opportunité, échanger sur le test et la
+              validation, ou demander une version détaillée de mon CV, n'hésitez
+              pas à me contacter directement.
+            </p>
+
+            <div class="contact-cards">
+              <div class="contact-card-item">
+                <i data-lucide="mail"></i>
+                <h3 class="contact-card-title">Contact Direct</h3>
+                <p class="contact-card-value">celine@demongeot.org</p>
+                <a
+                  href="mailto:celine@demongeot.org"
+                  class="btn btn-primary-small"
+                >
+                  <i data-lucide="send"></i>
+                  <span>Envoyer un Email</span>
+                </a>
+              </div>
+
+              <div class="contact-card-item">
+                <i data-lucide="phone"></i>
+                <h3 class="contact-card-title">Téléphone</h3>
+                <p class="contact-card-value">06 88 90 90 59</p>
+                <a href="tel:0688909059" class="btn btn-secondary-small">
+                  <i data-lucide="phone"></i>
+                  <span>Appeler</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Céline DEMONGEOT.</p>
+        <div class="footer-links">
+          <a href="#hero">Accueil</a>
+          <span>•</span>
+          <a href="mailto:celine@demongeot.org">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+      // Accordion Functionality
+      function toggleTimeline(id) {
+        const item = document.getElementById(id);
+        // Optional: Close others (Exclusive mode - can be uncommented if desired)
+        /*
+            document.querySelectorAll('.timeline-item').forEach(el => {
+                if (el.id !== id && el.classList.contains('expanded')) {
+                    el.classList.remove('expanded');
+                }
+            });
+            */
+        item.classList.toggle("expanded");
+      }
+    </script>
+  </body>
+</html>
