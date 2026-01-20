@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
+Sitemap: https://cv.demongeot.org/sitemap.xml
 
-# Interdire l'indexation des dossiers techniques inutiles pour Google
-Disallow: /assets/css/
-Disallow: /assets/js/
+

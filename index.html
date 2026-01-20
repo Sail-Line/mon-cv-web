@@ -27,7 +27,7 @@
     />
     <meta
       property="og:image"
-      content="https://cv.demongeot.org/assets/images/og-cv-celine.jpg"
+      content="https://cv.demongeot.org/assets/images/og-cv-celine.webp"
     />
     <meta
       name="keywords"
@@ -38,376 +38,23 @@
     <meta name="geo.placename" content="Fuveau" />
     <meta name="geo.position" content="43.45;5.56" />
     <meta name="ICBM" content="43.45, 5.56" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Céline DEMONGEOT - Ingénieur QA Senior & Expert IVVQ"
+    />
+    <meta
+      name="twitter:description"
+      content="Expertise ISTQB Full Advanced, Validation Systèmes Critiques (LDT, L16) & IoT."
+    />
+    <meta
+      name="twitter:image"
+      content="https://cv.demongeot.org/assets/images/og-cv-celine.webp"
+    />
+
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-      /* ===========================
-           ACCORDION STYLES
-           (Overrides & Additions to style.css)
-           =========================== */
-
-      /* Override default timeline-item to remove grid and behave as block */
-      .timeline-item {
-        display: block !important;
-        grid-template-columns: none !important;
-        gap: 0 !important;
-        margin-bottom: 2rem;
-      }
-
-      /* Hide elements from the old timeline design */
-      .timeline-marker {
-        display: none;
-      }
-
-      /* Override timeline-content to support accordion behavior */
-      .timeline-content {
-        padding: 0 !important;
-        overflow: hidden;
-        cursor: default;
-        display: block !important;
-      }
-
-      /* Header - Always visible area */
-      .timeline-header {
-        padding: 1.5rem;
-        cursor: pointer;
-        user-select: none;
-        position: relative;
-        transition: background-color 0.3s ease;
-      }
-
-      .timeline-header:hover {
-        background-color: #f9fafb;
-      }
-
-      /* Rotating Arrow Indicator */
-      .timeline-header::after {
-        content: "";
-        position: absolute;
-        right: 1.5rem;
-        top: 50%;
-        transform: translateY(-50%) rotate(0deg);
-        width: 0;
-        height: 0;
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-top: 8px solid var(--color-accent);
-        transition: transform 0.3s ease;
-      }
-
-      .timeline-item.expanded .timeline-header::after {
-        transform: translateY(-50%) rotate(180deg);
-      }
-
-      .timeline-header.no-arrow::after {
-        display: none !important;
-      }
-
-      /* Layout for Header Elements */
-      .exp-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: 0.5rem;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-
-      /* Override date style for accordion context */
-      .timeline-item .timeline-date {
-        text-align: left;
-        padding: 0;
-        font-size: 0.875rem;
-        font-weight: 700;
-        color: var(--color-accent);
-      }
-
-      .timeline-summary {
-        color: var(--color-text-light);
-        line-height: 1.6;
-        margin-bottom: 0.5rem;
-      }
-
-      .click-hint {
-        display: inline-block;
-        font-size: 0.75rem;
-        color: var(--color-accent);
-        font-weight: 600;
-        margin-top: 0.5rem;
-        opacity: 0.8;
-      }
-
-      /* Details - Hidden by default */
-      .timeline-details {
-        max-height: 0;
-        overflow: hidden;
-        transition:
-          max-height 0.5s ease,
-          padding 0.3s ease;
-        padding: 0 1.5rem;
-        border-top: 1px solid transparent;
-        background-color: var(--color-white);
-      }
-
-      .timeline-item.expanded .timeline-details {
-        max-height: 3000px;
-        padding: 1.5rem;
-        border-top: 1px solid var(--color-border);
-      }
-
-      .timeline-details-inner {
-        color: var(--color-text);
-        line-height: 1.7;
-      }
-
-      /* Sections uniformisées dans les détails */
-      .detail-section {
-        margin-bottom: 1.5rem;
-      }
-
-      .detail-section:last-child {
-        margin-bottom: 0;
-      }
-
-      .detail-section-title {
-        font-size: 1rem;
-        font-weight: 700;
-        color: var(--color-primary);
-        margin-bottom: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .detail-section-title::before {
-        content: "";
-        width: 4px;
-        height: 1rem;
-        background-color: var(--color-accent);
-        border-radius: 2px;
-      }
-
-      .detail-section-content {
-        color: var(--color-text);
-        line-height: 1.7;
-      }
-
-      .detail-section-content ul {
-        margin-left: 1.5rem;
-        list-style-type: disc;
-      }
-
-      .detail-section-content li {
-        margin-bottom: 0.5rem;
-      }
-
-      .detail-section-content li strong {
-        color: var(--color-primary);
-      }
-
-      /* Responsive adjustments for accordion */
-      @media (max-width: 768px) {
-        .exp-meta {
-          flex-direction: column;
-          gap: 0.25rem;
-        }
-      }
-
-      /* Custom styles for ISTQB logo alignment */
-      .istqb-title-with-logo {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .istqb-small-logo {
-        height: 47px;
-        width: auto;
-      }
-
-      /* Ajout du style "Card" pour les tableaux de compétences */
-      .skills-table {
-        background-color: var(--color-white, #fff);
-        border: 1px solid var(--color-border, #e5e7eb);
-        border-radius: 0.5rem;
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-        box-shadow:
-          0 4px 6px -1px rgba(0, 0, 0, 0.1),
-          0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      }
-
-      .skills-table:hover {
-        box-shadow:
-          0 10px 15px -3px rgba(0, 0, 0, 0.1),
-          0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        transition: box-shadow 0.3s ease;
-      }
-
-      /* --- STYLE DES 3 PILIERS DE COMPETENCES --- */
-      .skills-focus-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-
-      .skill-pillar {
-        background: var(--color-white);
-        border: 1px solid var(--color-border);
-        border-radius: 0.75rem;
-        padding: 2rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
-        border-top: 5px solid var(--color-primary);
-      }
-
-      .skill-pillar:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-      }
-
-      .pillar-header {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid #f3f4f6;
-      }
-
-      .pillar-icon {
-        color: var(--color-primary);
-        width: 32px;
-        height: 32px;
-      }
-
-      .pillar-header h3 {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: var(--color-text);
-        margin: 0;
-      }
-
-      .pillar-intro {
-        font-size: 0.95rem;
-        color: var(--color-text-light);
-        margin-bottom: 1rem;
-        font-style: italic;
-      }
-
-      .pillar-list {
-        list-style: none;
-        padding: 0;
-      }
-
-      .pillar-list li {
-        margin-bottom: 0.75rem;
-        padding-left: 1.25rem;
-        position: relative;
-        line-height: 1.5;
-      }
-
-      .pillar-list li::before {
-        content: "•";
-        color: var(--color-accent);
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-      }
-
-      /* Nuage de tags pour la partie technique */
-      .tech-category {
-        margin-bottom: 1rem;
-      }
-      .tech-category strong {
-        display: block;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        color: var(--color-text-light);
-        margin-bottom: 0.5rem;
-        letter-spacing: 0.05em;
-      }
-
-      .tech-tags-cloud {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-
-      .tech-tags-cloud span {
-        background-color: #f3f4f6;
-        color: #374151;
-        padding: 0.25rem 0.75rem;
-        border-radius: 9999px;
-        font-size: 0.85rem;
-        font-weight: 500;
-        border: 1px solid #e5e7eb;
-      }
-
-      /* --- STYLE DES BADGES DANS L'EXPÉRIENCE --- */
-      .experience-tech-stack {
-        margin-top: 0;
-      }
-
-      .tech-label {
-        display: none;
-      }
-
-      .tech-badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-
-      .badge {
-        background-color: rgba(37, 99, 235, 0.1);
-        color: var(--color-primary);
-        border: 1px solid rgba(37, 99, 235, 0.2);
-        padding: 0.25rem 0.75rem;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        font-weight: 600;
-      }
-
-      .btn-linkedin {
-        background-color: #0077b5;
-        color: #ffffff;
-        display: inline-flex;
-        align-items: center;
-        padding: 0.8rem 1.5rem;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        border: 2px solid #0077b5;
-      }
-
-      .btn-linkedin:hover {
-        background-color: #005582;
-        border-color: #005582;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
-        color: #ffffff;
-      }
-
-      /* Ajustement pour mobile */
-      @media (max-width: 768px) {
-        .hero-buttons {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-        }
-        .btn-linkedin {
-          justify-content: center;
-        }
-      }
-    </style>
 
     <script type="application/ld+json">
       {
@@ -417,10 +64,63 @@
           "@type": "Person",
           "@id": "https://cv.demongeot.org/#celine-demongeot",
           "name": "Céline Demongeot",
-          "jobTitle": "Ingénieur QA / Test & Validation (Certifiée ISTQB)",
+          "jobTitle": [
+            "Ingénieur Test et Validation",
+            "Ingénieur IVVQ",
+            "QA Lead",
+            "Test Manager"
+          ],
+          "worksFor": [
+            {
+              "@type": "Organization",
+              "name": "CS Group",
+              "startDate": "2023",
+              "endDate": "2025"
+            },
+            {
+              "@type": "Organization",
+              "name": "Editag",
+              "startDate": "2019",
+              "endDate": "2023"
+            },
+            {
+              "@type": "Organization",
+              "name": "Citegestion",
+              "startDate": "2017",
+              "endDate": "2019"
+            },
+            {
+              "@type": "Organization",
+              "name": "Intel",
+              "startDate": "2014",
+              "endDate": "2017"
+            }
+          ],
           "description": "Expertise en qualification logicielle, firmware, systèmes IoT et intégration continue.",
           "url": "https://cv.demongeot.org",
           "sameAs": ["https://www.linkedin.com/in/c%C3%A9line-demongeot/"],
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Ingénieur QA / Expert Test & Validation / IVVQ",
+            "occupationLocation": [
+              { "@type": "AdministrativeArea", "name": "France" },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Provence-Alpes-Côte d'Azur"
+              },
+              { "@type": "AdministrativeArea", "name": "Bouches-du-Rhône" },
+              { "@type": "City", "name": "Aix-en-Provence" },
+              { "@type": "City", "name": "Marseille" },
+              { "@type": "City", "name": "Toulon" },
+              { "@type": "City", "name": "Aubagne" },
+              { "@type": "City", "name": "La Ciotat" },
+              { "@type": "City", "name": "Nice" },
+              { "@type": "City", "name": "Cannes" },
+              { "@type": "City", "name": "Sophia Antipolis" }
+            ],
+            "description": "Expertise en qualification de systèmes critiques (Défense, IoT) sur l'ensemble de la région PACA."
+          },
+
           "sibling": {
             "@id": "https://www.demongeot.biz/#richard-demongeot"
           },
@@ -429,7 +129,7 @@
             "@id": "https://theo.demongeot.biz/#person",
             "name": "Théo Demongeot"
           },
-          "image": "https://cv.demongeot.org/assets/images/photo.jpg",
+          "image": "https://cv.demongeot.org/assets/images/photo.webp",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "32 avenue de Provence, Pure Provence A02",
@@ -497,9 +197,9 @@
             }
           ],
           "knowsAbout": [
-            "Test & Validation",
-            "QA",
+            "Expert Test & Validation",
             "IVVQ",
+            "QA Lead",
             "ISTQB",
             "ISTQB Full Advanced",
             "ISTQB Foundation",
@@ -508,107 +208,60 @@
             "ISTQB Technical Test Analyst",
             "ISTQB Agile Tester",
             "LDT",
+            {
+              "@type": "Thing",
+              "name": "Liaison de données tactiques",
+              "sameAs": "https://fr.wikipedia.org/wiki/Liaison_de_donn%C3%A9es_tactiques"
+            },
             "L16",
             "L11B",
             "IoT",
             "Jira",
             "C++",
             "NFC/RFID",
-            "Python"
-          ]
-        }
-      }
-    </script>
+            "Python",
+            {
+              "@type": "Thing",
+              "name": "ISTQB",
+              "sameAs": "https://fr.wikipedia.org/wiki/International_Software_Testing_Qualifications_Board"
+            },
 
-    <!--
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfilePage",
-        "mainEntity": {
-          "@type": "Person",
-          "name": "Céline DEMONGEOT",
-          "jobTitle": "Ingénieur QA / Test & Validation (Certifiée ISTQB)",
-          "description": "Expertise en qualification logicielle, firmware, systèmes IoT et intégration continue.",
-          "url": "https://cv.demongeot.org",
-          "sameAs": ["https://www.linkedin.com/in/c%C3%A9line-demongeot/"],
-          "hasCredential": [
             {
-              "@type": "EducationalOccupationalCredential",
-              "name": "ISTQB Certified Tester Foundation Level (CTFL)",
-              "credentialCategory": "Certification",
-              "recognizedBy": { "@type": "Organization", "name": "ISTQB" }
+              "@type": "Thing",
+              "name": "Liaison 16",
+              "sameAs": "https://fr.wikipedia.org/wiki/Liaison_16"
             },
             {
-              "@type": "EducationalOccupationalCredential",
-              "name": "ISTQB Advanced Level Test Manager (CTAL-TM)",
-              "credentialCategory": "Certification",
-              "recognizedBy": { "@type": "Organization", "name": "ISTQB" }
-            },
-            {
-              "@type": "EducationalOccupationalCredential",
-              "name": "ISTQB Advanced Level Test Analyst (CTAL-TA)",
-              "credentialCategory": "Certification",
-              "recognizedBy": { "@type": "Organization", "name": "ISTQB" }
-            },
-            {
-              "@type": "EducationalOccupationalCredential",
-              "name": "ISTQB Advanced Level Technical Test Analyst (CTAL-TTA)",
-              "credentialCategory": "Certification",
-              "recognizedBy": { "@type": "Organization", "name": "ISTQB" }
-            },
-            {
-              "@type": "EducationalOccupationalCredential",
-              "name": "ISTQB Agile Tester",
-              "credentialCategory": "Certification",
-              "recognizedBy": { "@type": "Organization", "name": "ISTQB" }
+              "@type": "Thing",
+              "name": "STANAG",
+              "sameAs": "https://armement.defense.gouv.fr/normalisation/les-referentiels/normes-de-lotan"
             }
           ],
-          "image": "https://cv.demongeot.org/assets/images/photo.jpg",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "32 avenue de Provence, Pure Provence A02",
-            "addressLocality": "Fuveau",
-            "postalCode": "13710",
-            "addressCountry": "FR"
+
+          "seeks": {
+            "@type": "Demand",
+            "name": "Opportunité en Test & Validation / QA Lead",
+            "availabilityStarts": "2026-01-21",
+            "areaServed": [
+              { "@type": "Place", "name": "Aix-en-Provence" },
+              { "@type": "Place", "name": "Marseille" },
+              { "@type": "Place", "name": "Toulon" },
+              { "@type": "Place", "name": "Télétravail" }
+            ],
+            "description": "Disponible pour des missions ou CDI en tant qu'Ingénieur QA Senior, Expert IVVQ ou Test Manager.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Consulting et Ingénierie Test & Validation"
+            }
           },
-          "email": "celine@demongeot.org",
-          "telephone": "+33-6-88-90-90-59",
-          "alumniOf": [
-            {
-              "@type": "CollegeOrUniversity",
-              "name": "IUP d'Avignon"
-            },
-            {
-              "@type": "CollegeOrUniversity",
-              "name": "Université Aix-Marseille III"
-            }
-          ],
-          "knowsAbout": [
-            "Test & Validation",
-            "QA",
-            "IVVQ",
-            "ISTQB",
-            "ISTQB Full Advanced",
-            "ISTQB Foundation",
-            "ISTQB Test Manager",
-            "ISTQB Test Analyst",
-            "ISTQB Technical Test Analyst",
-            "ISTQB Agile Tester",
-            "LDT",
-            "L16",
-            "L11B",
-            "IoT",
-            "Jira",
-            "C++",
-            "Jira",
-            "NFC/RFID",
-            "Python"
-          ]
+
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://cv.demongeot.org"
+          }
         }
       }
     </script>
--->
   </head>
 
   <body>
@@ -623,7 +276,7 @@
           <a href="#contact" class="btn-contact">Contact</a>
         </div>
         <button class="mobile-menu-btn" aria-label="Menu">
-          <i data-lucide="menu"></i>
+          <i data-lucide="menu" aria-hidden="true"></i>
         </button>
       </nav>
     </header>
@@ -634,10 +287,14 @@
         <div class="container hero-grid">
           <div class="hero-content">
             <p class="hero-label">Profil Professionnel & CV</p>
-            <h1 class="hero-title">Céline DEMONGEOT</h1>
+            <h1 class="hero-title">
+              Céline DEMONGEOT <br />
+              <span class="hero-subtitle"
+                >Ingénieur QA Senior & Expert IVVQ
+              </span>
+            </h1>
             <h2 class="hero-subtitle">
-              Ingénieur Test & Validation Senior | Expert IVVQ <br />
-              Certifiée ISTQB Full Advanced
+              Certifiée <a href="https://istqb.org/">ISTQB</a> Full Advanced
             </h2>
             <p class="hero-text">
               Passionnée par l'informatique et soucieuse de la qualité des
@@ -647,7 +304,7 @@
             </p>
             <div class="hero-buttons">
               <a href="#experience" class="btn btn-primary">
-                <i data-lucide="chevrons-down"></i>
+                <i data-lucide="chevrons-down" aria-hidden="true"></i>
                 <span>Explorer mon parcours</span>
               </a>
 
@@ -677,10 +334,10 @@
                 href="assets/documents/CV_de_Celine_DEMONGEOT.pdf"
                 target="_blank"
                 rel="noopener"
-                title="Télécharger le CV au format PDF"
+                title="Télécharger le CV de Céline Demongeot - Ingénieur QA Expert IVVQ & LDT (PDF)"
                 class="btn btn-secondary"
               >
-                <i data-lucide="download"></i>
+                <i data-lucide="download" aria-hidden="true"></i>
                 <span>Télécharger le CV</span>
               </a>
             </div>
@@ -689,8 +346,10 @@
           <div class="hero-aside">
             <div class="profile-photo">
               <img
-                src="assets/images/photo.jpg"
-                alt="Photo de Céline DEMONGEOT"
+                src="assets/images/photo.webp"
+                alt="Photo de Céline DEMONGEOT, Ingénieur QA et Expert IVVQ"
+                width="300"
+                height="300"
               />
             </div>
 
@@ -702,34 +361,36 @@
               style="text-decoration: none; color: inherit; display: block"
             >
               <h3 class="card-title istqb-title-with-logo">
-                <i data-lucide="award"></i>
+                <i data-lucide="award" aria-hidden="true"></i>
                 Certifications ISTQB
                 <img
-                  src="assets/images/istqb.png"
-                  alt="Logo ISTQB"
+                  src="assets/images/istqb.webp"
+                  alt="Logo ISTQB - Certification Test Logiciel"
                   class="istqb-small-logo"
+                  width="60"
+                  height="47"
                 />
               </h3>
               <ul class="certification-list">
                 <li>
                   <span>Foundation (10/2017)</span
-                  ><i data-lucide="check-circle"></i>
+                  ><i data-lucide="check-circle" aria-hidden="true"></i>
                 </li>
                 <li>
                   <span>Test Manager (12/2017)</span
-                  ><i data-lucide="check-circle"></i>
+                  ><i data-lucide="check-circle" aria-hidden="true"></i>
                 </li>
                 <li>
                   <span>Test Analyst (12/2017)</span
-                  ><i data-lucide="check-circle"></i>
+                  ><i data-lucide="check-circle" aria-hidden="true"></i>
                 </li>
                 <li>
                   <span>Agile Tester (04/2018)</span
-                  ><i data-lucide="check-circle"></i>
+                  ><i data-lucide="check-circle" aria-hidden="true"></i>
                 </li>
                 <li>
                   <span>Technical Test Analyst (06/2018)</span
-                  ><i data-lucide="check-circle"></i>
+                  ><i data-lucide="check-circle" aria-hidden="true"></i>
                 </li>
               </ul>
             </a>
@@ -756,10 +417,20 @@
               contact aux solutions IOT, aux solutions logicielles de GMAO ou
               encore aux Liaisons de Données Tactiques.
             </p>
-
+            <p class="lead-text">
+              Mon expertise en Liaisons de Données Tactiques (L16, L11B)
+              s'appuie sur les
+              <a
+                href="https://armement.defense.gouv.fr/normalisation/les-referentiels/normes-de-lotan"
+                >accords de normalisation (STANAG)
+              </a>
+              établis par l'OTAN et destinés à assurer l'interopérabilité des
+              procédures et des matériels au sein des pays membres de l'Alliance
+              Atlantique.
+            </p>
             <div class="contact-card">
               <h3 class="card-subtitle">
-                <i data-lucide="map-pin"></i>
+                <i data-lucide="map-pin" aria-hidden="true"></i>
                 Localisation & Coordonnées
               </h3>
               <div class="contact-info">
@@ -776,7 +447,7 @@
           <div class="about-sidebar">
             <div class="education-section">
               <h3 class="section-subtitle">
-                <i data-lucide="graduation-cap"></i>
+                <i data-lucide="graduation-cap" aria-hidden="true"></i>
                 Formation Académique
               </h3>
               <div class="education-list">
@@ -802,12 +473,12 @@
 
             <div class="interests-section">
               <h3 class="section-subtitle">
-                <i data-lucide="heart"></i>
+                <i data-lucide="heart" aria-hidden="true"></i>
                 Centres d'Intérêt
               </h3>
               <div class="interests-grid">
                 <div class="interest-card">
-                  <i data-lucide="laptop-2"></i>
+                  <i data-lucide="laptop-2" aria-hidden="true"></i>
                   <p class="interest-title">Informatique</p>
                   <p class="interest-desc">
                     <a href="https://github.com/Sail-Line/ha-tempo">Domotique</a
@@ -815,7 +486,7 @@
                   </p>
                 </div>
                 <div class="interest-card">
-                  <i data-lucide="sailboat"></i>
+                  <i data-lucide="sailboat" aria-hidden="true"></i>
                   <p class="interest-title">Voile</p>
                   <p class="interest-desc">
                     Monitorat fédéral de voile depuis 1996, compétition (33e
@@ -823,7 +494,7 @@
                   </p>
                 </div>
                 <div class="interest-card">
-                  <i data-lucide="music"></i>
+                  <i data-lucide="music" aria-hidden="true"></i>
                   <p class="interest-title">Musique</p>
                   <p class="interest-desc">
                     Clarinette en ensemble depuis 35 ans, Saxophone.
@@ -853,12 +524,15 @@
                   onclick="toggleTimeline('csgroup')"
                 >
                   <div class="company-logo">
-                    <img
-                      src="assets/images/csgroup.png"
-                      alt="Logo CS Group"
-                      loading="lazy"
-                      onerror="this.style.display = 'none'"
-                    />
+                    <a href="https://www.cs-soprasteria.com/fr/"
+                      ><img
+                        src="assets/images/csgroup.webp"
+                        alt="Logo CS Group - Ingénierie de Défense et Sécurité"
+                        loading="lazy"
+                        onerror="this.style.display = 'none'"
+                        width="150"
+                        height="90"
+                    /></a>
                   </div>
 
                   <div class="exp-meta">
@@ -872,11 +546,12 @@
                   <div class="timeline-summary">
                     <p>
                       Intégration et qualification globale du système de
-                      communication tactique PCO-L16 (Liaisons de Données
-                      Tactiques) au sein d'un projet stratégique de défense.
-                      Garantie de l'interopérabilité des flux de données et de
-                      la conformité opérationnelle selon les standards
-                      militaires.
+                      communication tactique PCO-L16 (<a
+                        href="https://www.youtube.com/watch?v=SmKGSaIcbKk"
+                        >Liaisons de Données Tactiques</a
+                      >) au sein d'un projet stratégique de défense. Garantie de
+                      l'interopérabilité des flux de données et de la conformité
+                      opérationnelle selon les standards militaires.
                     </p>
                   </div>
 
@@ -894,8 +569,10 @@
                       <div class="detail-section-content">
                         <p>
                           Validation du système PCO-L16 pour assurer la
-                          conformité opérationnelle et garantir
-                          l'interopérabilité des flux.
+                          conformité opérationnelle et garantir l'<a
+                            href="https://www.defense.gouv.fr/dga/actualites/direction-generale-larmement-qualifie-lintegration-dun-nouveau-terminal-communication-permettant"
+                            >interopérabilité des flux</a
+                          >.
                         </p>
                       </div>
                     </div>
@@ -954,16 +631,33 @@
                       <h4 class="detail-section-title">Environnement</h4>
                       <div class="detail-section-content">
                         <div class="experience-tech-stack">
-                          <div class="tech-badges">
-                            <span class="badge">Redmine</span>
-                            <span class="badge"
-                              >Liaisons de Données Tactiques (L16, L11B,
-                              JRE)</span
-                            >
-                            <span class="badge">Wireshark</span>
-                            <span class="badge">Intégration Système</span>
-                            <span class="badge">Défense</span>
-                          </div>
+                          <dl class="tech-list-semantic">
+                            <div class="tech-pair">
+                              <dt class="sr-only">Outil de suivi :</dt>
+                              <dd>Redmine</dd>
+                            </div>
+
+                            <div class="tech-pair">
+                              <dt class="sr-only">Protocole métier :</dt>
+                              <dd>
+                                Liaisons de Données Tactiques (L16, L11B, JRE)
+                              </dd>
+                            </div>
+
+                            <div class="tech-pair">
+                              <dt class="sr-only">Outil d'analyse réseau :</dt>
+                              <dd>Wireshark</dd>
+                            </div>
+
+                            <div class="tech-pair">
+                              <dt class="sr-only">Test :</dt>
+                              <dd>Intégration Système</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Secteur :</dt>
+                              <dd>Défense</dd>
+                            </div>
+                          </dl>
                         </div>
                       </div>
                     </div>
@@ -978,12 +672,15 @@
                 <!-- HEADER -->
                 <div class="timeline-header" onclick="toggleTimeline('editag')">
                   <div class="company-logo">
-                    <img
-                      src="assets/images/logoEditag.png"
-                      alt="Logo Editag"
-                      loading="lazy"
-                      onerror="this.style.display = 'none'"
-                    />
+                    <a href="https://editag.com/"
+                      ><img
+                        src="assets/images/logoEditag.webp"
+                        alt="Logo Editag - Solutions IoT Industriel et RTLS"
+                        loading="lazy"
+                        onerror="this.style.display = 'none'"
+                        width="150"
+                        height="41"
+                    /></a>
                   </div>
 
                   <div class="exp-meta">
@@ -1072,13 +769,28 @@
                       <h4 class="detail-section-title">Environnement</h4>
                       <div class="detail-section-content">
                         <div class="experience-tech-stack">
-                          <div class="tech-badges">
-                            <span class="badge">Redmine</span>
-                            <span class="badge">Radio (LoRa, RTLS)</span>
-                            <span class="badge">REST</span>
-                            <span class="badge">MQTT</span>
-                            <span class="badge">MongoDB</span>
-                          </div>
+                          <dl class="tech-list-semantic">
+                            <div class="tech-pair">
+                              <dt class="sr-only">Outil de suivi :</dt>
+                              <dd>Redmine</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Radio & Protocoles :</dt>
+                              <dd>Radio (LoRa, RTLS)</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Architecture API :</dt>
+                              <dd>REST</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Protocole IoT :</dt>
+                              <dd>MQTT</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Base de données :</dt>
+                              <dd>MongoDB</dd>
+                            </div>
+                          </dl>
                         </div>
                       </div>
                     </div>
@@ -1096,12 +808,15 @@
                   onclick="toggleTimeline('citegestion')"
                 >
                   <div class="company-logo">
-                    <img
-                      src="assets/images/logoCitegestion.png"
-                      alt="Logo Citegestion"
-                      loading="lazy"
-                      onerror="this.style.display = 'none'"
-                    />
+                    <a href="https://www.citegestion.fr/">
+                      <img
+                        src="assets/images/logoCitegestion.webp"
+                        alt="Logo Citegestion - Logiciel de GMAO pour Smart City et Eclairage Public"
+                        loading="lazy"
+                        onerror="this.style.display = 'none'"
+                        width="150"
+                        height="50"
+                    /></a>
                   </div>
 
                   <div class="exp-meta">
@@ -1117,7 +832,7 @@
                       Validation de la plateforme digitale "MUSE" dédiée à la
                       gestion de patrimoines urbains (éclairage, voirie).
                       Assurance de la qualité fonctionnelle de la solution
-                      déclinée sur Interface Web, Application Mobile Android et
+                      déclinée sur interface Web, Application Mobile Android et
                       Desktop.
                     </p>
                   </div>
@@ -1189,12 +904,26 @@
                       <h4 class="detail-section-title">Environnement</h4>
                       <div class="detail-section-content">
                         <div class="experience-tech-stack">
-                          <div class="tech-badges">
-                            <span class="badge">HP ALM</span>
-                            <span class="badge">TestComplete</span>
-                            <span class="badge">Android</span>
-                            <span class="badge">Agile Scrum</span>
-                          </div>
+                          <dl class="tech-list-semantic">
+                            <div class="tech-pair">
+                              <dt class="sr-only">
+                                Outil de Test Management :
+                              </dt>
+                              <dd>HP ALM</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Automatisation :</dt>
+                              <dd>TestComplete</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Environnement Mobile :</dt>
+                              <dd>Android</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Méthodologie :</dt>
+                              <dd>Agile Scrum</dd>
+                            </div>
+                          </dl>
                         </div>
                       </div>
                     </div>
@@ -1210,10 +939,12 @@
                 <div class="timeline-header" onclick="toggleTimeline('intel')">
                   <div class="company-logo">
                     <img
-                      src="assets/images/logoIntel.png"
-                      alt="Logo Intel"
+                      src="assets/images/logoIntel.webp"
+                      alt="Logo Intel - Technologies Sans Contact, NFC et Mobile"
                       loading="lazy"
                       onerror="this.style.display = 'none'"
+                      width="150"
+                      height="56"
                     />
                   </div>
 
@@ -1301,19 +1032,52 @@
                       <h4 class="detail-section-title">Environnement</h4>
                       <div class="detail-section-content">
                         <div class="experience-tech-stack">
-                          <div class="tech-badges">
-                            <span class="badge">Cartes à puce</span>
-                            <span class="badge">EMVCo</span>
-                            <span class="badge">ISO-7816</span>
-                            <span class="badge">ISO-14443</span>
-                            <span class="badge">ISO-10373</span>
-                            <span class="badge">ISO-15693</span>
-                            <span class="badge">CLEARQUEST</span>
-                            <span class="badge">Micropross</span>
-                            <span class="badge">Keolabs</span>
-                            <span class="badge">Python</span>
-                            <span class="badge">NFC / RFID</span>
-                          </div>
+                          <dl class="tech-list-semantic">
+                            <div class="tech-pair">
+                              <dt class="sr-only">Technologie :</dt>
+                              <dd>Cartes à puce</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Norme Bancaire :</dt>
+                              <dd>EMVCo</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Norme ISO :</dt>
+                              <dd>ISO-7816</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Norme Sans Contact :</dt>
+                              <dd>ISO-14443</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Norme Test :</dt>
+                              <dd>ISO-10373</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Norme Vicinity :</dt>
+                              <dd>ISO-15693</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Outil de suivi :</dt>
+                              <dd>CLEARQUEST</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Outil Hardware :</dt>
+                              <dd>Micropross</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Outil Hardware :</dt>
+                              <dd>Keolabs</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Scripting :</dt>
+                              <dd>Python</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Domaine :</dt>
+                              <dd>NFC / RFID</dd>
+                            </div>
+                          </dl>
                         </div>
                       </div>
                     </div>
@@ -1329,10 +1093,12 @@
                 <div class="timeline-header" onclick="toggleTimeline('inside')">
                   <div class="company-logo">
                     <img
-                      src="assets/images/logoInside.png"
-                      alt="Logo Inside"
+                      src="assets/images/logoInside.webp"
+                      alt="Logo Inside - Semi-conducteurs, Cartes à puce et Sécurité"
                       loading="lazy"
                       onerror="this.style.display = 'none'"
+                      width="150"
+                      height="43"
                     />
                   </div>
 
@@ -1427,21 +1193,60 @@
                       <h4 class="detail-section-title">Environnement</h4>
                       <div class="detail-section-content">
                         <div class="experience-tech-stack">
-                          <div class="tech-badges">
-                            <span class="badge">Smart Cards</span>
-                            <span class="badge">EMV</span>
-                            <span class="badge">ISO-7816</span>
-                            <span class="badge">ISO-14443</span>
-                            <span class="badge">ISO-10373</span>
-                            <span class="badge">ISO-15693</span>
-                            <span class="badge">MANTIS</span>
-                            <span class="badge">JIRA</span>
-                            <span class="badge">VISUAL C++</span>
-                            <span class="badge">C++ / C#</span>
-                            <span class="badge">PYTHON</span>
-                            <span class="badge">Micropross</span>
-                            <span class="badge">Keolabs</span>
-                          </div>
+                          <dl class="tech-list-semantic">
+                            <div class="tech-pair">
+                              <dt class="sr-only">Technologie :</dt>
+                              <dd>Smart Cards</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Norme Paiement :</dt>
+                              <dd>EMV</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Norme Contact :</dt>
+                              <dd>ISO-7816</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Norme Sans Contact :</dt>
+                              <dd>ISO-14443</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Norme Test :</dt>
+                              <dd>ISO-10373</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Norme Vicinity :</dt>
+                              <dd>ISO-15693</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Bug Tracker :</dt>
+                              <dd>MANTIS</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Gestion de projet :</dt>
+                              <dd>JIRA</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">IDE :</dt>
+                              <dd>VISUAL C++</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Langage :</dt>
+                              <dd>C++ / C#</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Scripting :</dt>
+                              <dd>PYTHON</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Outil Hardware :</dt>
+                              <dd>Micropross</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Outil Hardware :</dt>
+                              <dd>Keolabs</dd>
+                            </div>
+                          </dl>
                         </div>
                       </div>
                     </div>
@@ -1457,10 +1262,12 @@
                 <div class="timeline-header" onclick="toggleTimeline('gfi')">
                   <div class="company-logo">
                     <img
-                      src="assets/images/logogfi.gif"
-                      alt="Logo GFI"
+                      src="assets/images/logogfi.webp"
+                      alt="Logo GFI - ESN et Services Numériques"
                       loading="lazy"
                       onerror="this.style.display = 'none'"
+                      width="92"
+                      height="90"
                     />
                   </div>
 
@@ -1527,7 +1334,7 @@
                             Front-end).
                           </li>
                           <li>
-                            <strong>Inside Contactless : </strong> Exécution de
+                            <strong>Inside Contactless : </strong>Exécution de
                             tests protocolaires sur cartes contact et sans
                             contact.
                           </li>
@@ -1551,23 +1358,58 @@
                       <h4 class="detail-section-title">Environnement</h4>
                       <div class="detail-section-content">
                         <div class="experience-tech-stack">
-                          <div class="tech-badges">
-                            <span class="badge">C</span>
-                            <span class="badge">C++</span>
-                            <span class="badge">C#</span>
-                            <span class="badge">Java</span>
-                            <span class="badge">Turbo Pascal</span>
-                            <span class="badge"
-                              >Normes EMV / ISO-7816 / ISO-14443 /
-                              ISO-10373</span
-                            >
-                            <span class="badge">MANTIS</span>
-                            <span class="badge">JIRA</span>
-                            <span class="badge">PVCS</span>
-                            <span class="badge">PYTHON</span>
-                            <span class="badge">Micropross</span>
-                            <span class="badge">Keolabs</span>
-                          </div>
+                          <dl class="tech-list-semantic">
+                            <div class="tech-pair">
+                              <dt class="sr-only">Langage :</dt>
+                              <dd>C</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Langage :</dt>
+                              <dd>C++</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Langage :</dt>
+                              <dd>C#</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Langage :</dt>
+                              <dd>Java</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Langage :</dt>
+                              <dd>Turbo Pascal</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Normes et Standards :</dt>
+                              <dd>
+                                Normes EMV / ISO-7816 / ISO-14443 / ISO-10373
+                              </dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Bug Tracker :</dt>
+                              <dd>MANTIS</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Gestion de projet :</dt>
+                              <dd>JIRA</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Versioning :</dt>
+                              <dd>PVCS</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Scripting :</dt>
+                              <dd>PYTHON</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Outil Hardware :</dt>
+                              <dd>Micropross</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Outil Hardware :</dt>
+                              <dd>Keolabs</dd>
+                            </div>
+                          </dl>
                         </div>
                       </div>
                     </div>
@@ -1586,10 +1428,12 @@
                 >
                   <div class="company-logo">
                     <img
-                      src="assets/images/logodigitech.gif"
-                      alt="Logo Digitech"
+                      src="assets/images/logodigitech.webp"
+                      alt="Logo Digitech - Dématérialisation de documents"
                       loading="lazy"
                       onerror="this.style.display = 'none'"
+                      width="90"
+                      height="94"
                     />
                   </div>
 
@@ -1681,10 +1525,16 @@
                       <h4 class="detail-section-title">Environnement</h4>
                       <div class="detail-section-content">
                         <div class="experience-tech-stack">
-                          <div class="tech-badges">
-                            <span class="badge">VISUAL C++</span>
-                            <span class="badge">SQL</span>
-                          </div>
+                          <dl class="tech-list-semantic">
+                            <div class="tech-pair">
+                              <dt class="sr-only">IDE :</dt>
+                              <dd>VISUAL C++</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Langage de données :</dt>
+                              <dd>SQL</dd>
+                            </div>
+                          </dl>
                         </div>
                       </div>
                     </div>
@@ -1700,10 +1550,12 @@
                 <div class="timeline-header" onclick="toggleTimeline('stil')">
                   <div class="company-logo">
                     <img
-                      src="assets/images/logostil.gif"
-                      alt="Logo STIL"
+                      src="assets/images/logostil.webp"
+                      alt="Logo STIL - Systèmes de mesure optique haute précision"
                       loading="lazy"
                       onerror="this.style.display = 'none'"
+                      width="150"
+                      height="105"
                     />
                   </div>
 
@@ -1796,11 +1648,20 @@
                       <h4 class="detail-section-title">Environnement</h4>
                       <div class="detail-section-content">
                         <div class="experience-tech-stack">
-                          <div class="tech-badges">
-                            <span class="badge">VISUAL C++</span>
-                            <span class="badge">SQL</span>
-                            <span class="badge">Métrologie 3D</span>
-                          </div>
+                          <dl class="tech-list-semantic">
+                            <div class="tech-pair">
+                              <dt class="sr-only">IDE :</dt>
+                              <dd>VISUAL C++</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Langage de données :</dt>
+                              <dd>SQL</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Domaine métier :</dt>
+                              <dd>Métrologie 3D</dd>
+                            </div>
+                          </dl>
                         </div>
                       </div>
                     </div>
@@ -1897,13 +1758,30 @@
                       <h4 class="detail-section-title">Environnement</h4>
                       <div class="detail-section-content">
                         <div class="experience-tech-stack">
-                          <div class="tech-badges">
-                            <span class="badge">VISUAL C++</span>
-                            <span class="badge">SQL</span>
-                            <span class="badge">C</span>
-                            <span class="badge">ILOG Solver</span>
-                            <span class="badge">Delphi</span>
-                          </div>
+                          <dl class="tech-list-semantic">
+                            <div class="tech-pair">
+                              <dt class="sr-only">IDE :</dt>
+                              <dd>VISUAL C++</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Langage de données :</dt>
+                              <dd>SQL</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Langage :</dt>
+                              <dd>C</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">
+                                Librairie d'optimisation :
+                              </dt>
+                              <dd>ILOG Solver</dd>
+                            </div>
+                            <div class="tech-pair">
+                              <dt class="sr-only">Langage :</dt>
+                              <dd>Delphi</dd>
+                            </div>
+                          </dl>
                         </div>
                       </div>
                     </div>
@@ -1926,17 +1804,23 @@
           <div class="skills-focus-container">
             <div class="skill-pillar">
               <div class="pillar-header">
-                <i data-lucide="shield-check" class="pillar-icon"></i>
+                <i
+                  data-lucide="shield-check"
+                  class="pillar-icon"
+                  aria-hidden="true"
+                ></i>
                 <h3>Expertise QA & Fonctionnelle</h3>
               </div>
+
               <div class="pillar-content">
                 <p class="pillar-intro">
                   Ma méthodologie pour garantir la qualité :
                 </p>
                 <ul class="pillar-list">
                   <li>
-                    <strong>Stratégie de Test :</strong> Planification,
-                    conception et analyse de risques.
+                    <strong>Stratégie de Test :</strong> Pilotage de la
+                    <i>Recette fonctionnelle</i>, planification et analyse de
+                    risques.
                   </li>
                   <li>
                     <strong>Certifications :</strong> ISTQB (Foundation, Test
@@ -1944,16 +1828,21 @@
                     Tester).
                   </li>
                   <li>
-                    <strong>Cycle de vie :</strong> Gestion complète des
-                    anomalies (Jira, Redmine).
+                    <strong>Automatisation :</strong> Conception de scripts pour
+                    l'<i>Automatisation de tests en Python</i>.
                   </li>
                   <li>
-                    <strong>Qualification :</strong> Multi-niveaux (Système,
-                    Logiciel, Firmware).
+                    <strong>Qualification :</strong> Expertise en
+                    <i>Validation système complexe</i> Défense, (End-to-End,
+                    Hardware/Software) et Firmware.
                   </li>
                   <li>
-                    <strong>Reporting :</strong> Métriques qualité, bilans et
-                    KPI.
+                    <strong>Cycle de vie :</strong> Gestion rigoureuse des
+                    anomalies (Jira, Redmine) et suivi des correctifs.
+                  </li>
+                  <li>
+                    <strong>Reporting :</strong> Métriques qualité, bilans
+                    d'avancement et KPI.
                   </li>
                   <li>
                     <strong>Transmission :</strong> Formation et support aux
@@ -1965,7 +1854,11 @@
 
             <div class="skill-pillar">
               <div class="pillar-header">
-                <i data-lucide="briefcase" class="pillar-icon"></i>
+                <i
+                  data-lucide="briefcase"
+                  class="pillar-icon"
+                  aria-hidden="true"
+                ></i>
                 <h3>Domaines Métier & Produits</h3>
               </div>
               <div class="pillar-content">
@@ -1994,7 +1887,11 @@
 
             <div class="skill-pillar">
               <div class="pillar-header">
-                <i data-lucide="code-2" class="pillar-icon"></i>
+                <i
+                  data-lucide="code-2"
+                  class="pillar-icon"
+                  aria-hidden="true"
+                ></i>
                 <h3>Stack Technique & Outils</h3>
               </div>
               <div class="pillar-content">
@@ -2052,24 +1949,24 @@
 
             <div class="contact-cards">
               <div class="contact-card-item">
-                <i data-lucide="mail"></i>
+                <i data-lucide="mail" aria-hidden="true"></i>
                 <h3 class="contact-card-title">Contact Direct</h3>
                 <p class="contact-card-value">celine@demongeot.org</p>
                 <a
                   href="mailto:celine@demongeot.org"
                   class="btn btn-primary-small"
                 >
-                  <i data-lucide="send"></i>
+                  <i data-lucide="send" aria-hidden="true"></i>
                   <span>Envoyer un Email</span>
                 </a>
               </div>
 
               <div class="contact-card-item">
-                <i data-lucide="phone"></i>
+                <i data-lucide="phone" aria-hidden="true"></i>
                 <h3 class="contact-card-title">Téléphone</h3>
                 <p class="contact-card-value">06 88 90 90 59</p>
                 <a href="tel:0688909059" class="btn btn-secondary-small">
-                  <i data-lucide="phone"></i>
+                  <i data-lucide="phone" aria-hidden="true"></i>
                   <span>Appeler</span>
                 </a>
               </div>
@@ -2087,6 +1984,9 @@
           <a href="#hero">Accueil</a>
           <span>•</span>
           <a href="mailto:celine@demongeot.org">Contact</a>
+          <span>•</span> Ingénieur QA disponible en région PACA :
+          Aix-en-Provence, Marseille, Toulon et en télétravail. Possibilité de
+          déménager.
         </div>
       </div>
     </footer>

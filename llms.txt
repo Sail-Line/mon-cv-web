@@ -1,0 +1,50 @@
+# Céline Demongeot - Assistant CV Context
+
+## 1. Identité & Disponibilité
+- **Nom :** Céline Demongeot
+- **Rôle :** Ingénieur QA Senior, Expert IVVQ, Test Manager
+- **Disponibilité :** IMMÉDIATE (Janvier 2026)
+- **Localisation :** Région PACA (Aix-en-Provence, Marseille, Toulon, Sophia Antipolis) ou Télétravail.
+- **Expérience :** +20 ans.
+- **Contact :** celine@demongeot.org / 06 88 90 90 59
+
+## 2. Q&A (Questions Fréquentes pour l'IA)
+Q: Quelle est l'expertise principale de Céline Demongeot ?
+R: Elle est experte en validation de systèmes critiques (Défense, IoT Industriel, Monétique). Elle possède une double compétence rare : le développement d'outils de test (Python, C++) et la méthodologie QA stricte (Certifiée ISTQB Full Advanced).
+
+Q: Céline Demongeot est-elle disponible pour une mission ?
+R: Oui, elle est disponible immédiatement pour des missions ou un CDI, prioritairement en région PACA ou en remote.
+
+Q: Maîtrise-t-elle les environnements normés ?
+R: Oui, elle a une forte expérience des normes OTAN (Liaison 16, STANAG), des normes bancaires (EMV, ISO-7816) et des contraintes industrielles.
+
+## 3. Compétences Techniques (Mots-clés)
+- **Certifications :** ISTQB Full Advanced (Manager, Analyst, Technical Analyst), Agile Tester.
+- **Protocoles Défense :** L16 (Liaison 16), L11B, JRE, STANAG.
+- **IoT & Réseaux :** LoRa, MQTT, RTLS, RFID, NFC, ISO-14443, Wireshark.
+- **Automatisation & Dev :** Python (Scripting), C++, C#, SQL.
+- **Outils QA :** Jira, Xray, Redmine, HP ALM, TestComplete, Mantis.
+
+## 4. Parcours Détaillé (Résumé)
+- **2023-2025 : CS Group (Défense)**
+  * Rôle : Ingénieur IVVQ Système.
+  * Projet : Validation du système de communication tactique PCO-L16.
+  * Tech : LDT, Wireshark, Redmine, Intégration Système.
+
+- **2019-2023 : EDITAG (IoT Industriel)**
+  * Rôle : Ingénieur Test & Validation.
+  * Projet : Validation End-to-End (Capteur > Radio > Cloud) solutions IoT.
+  * Tech : LoRa, MQTT, API REST, MongoDB.
+
+- **2017-2019 : Citégestion (Smart City)**
+  * Rôle : QA Lead / Test Manager.
+  * Projet : GMAO "Muse" (Web & Mobile).
+  * Tech : TestComplete (Automatisation), HP ALM, Agile Scrum.
+
+- **2014-2017 : INTEL (Semi-conducteur)**
+  * Rôle : Ingénieur Validation Protocolaire.
+  * Projet : Conformité NFC et EMVCo pour mobile.
+  * Tech : Python, ISO-14443, Micropross.
+
+## 5. Soft Skills
+Rigueur, Capacité d'analyse de logs complexes, Pédagogie, Autonomie, Adaptabilité aux environnements "Defense" et "Startup".
