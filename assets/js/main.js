@@ -18,8 +18,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     if (target) {
       const headerOffset = 80;
       const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset; // window.scrollY est plus moderne que pageYOffset
 
       window.scrollTo({
         top: offsetPosition,
@@ -30,7 +29,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // ===========================
-// INTERSECTION OBSERVER FOR ANIMATIONS
+// INTERSECTION OBSERVER (Animations)
 // ===========================
 const observerOptions = {
   threshold: 0.1,
@@ -46,119 +45,76 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe all sections
-document.querySelectorAll("section").forEach((section) => {
-  observer.observe(section);
-});
-
-// Observe timeline items
-document.querySelectorAll(".timeline-item").forEach((item) => {
-  observer.observe(item);
-});
-
-// Observe skill cards
-document.querySelectorAll(".skill-card").forEach((card) => {
-  observer.observe(card);
-});
-
-// ===========================
-// MOBILE MENU TOGGLE
-// ===========================
-//const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-//const navLinks = document.querySelector(".nav-links");
-
-//if (mobileMenuBtn && navLinks) {
-//  mobileMenuBtn.addEventListener("click", () => {
-//    navLinks.classList.toggle("show");
-//  });
-
-// Close menu when clicking on a link
-//  document.querySelectorAll(".nav-links a").forEach((link) => {
-//    link.addEventListener("click", () => {
-//      navLinks.classList.remove("show");
-//    });
-//  });
-//}
+// Observe elements
+document
+  .querySelectorAll("section, .timeline-item, .skill-pillar")
+  .forEach((el) => {
+    observer.observe(el);
+  });
 
 // ===========================
 // HEADER SCROLL EFFECT
 // ===========================
-let lastScroll = 0;
 const header = document.querySelector(".sticky-header");
 
-window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset;
+window.addEventListener(
+  "scroll",
+  () => {
+    if (window.scrollY > 100) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  },
+  { passive: true },
+); // passive: true améliore les perfs du scroll
 
-  if (currentScroll > 100) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
+// ===========================
+// ACTIVE STATE NAVIGATION
+// ===========================
+// Optimisation : Utilisation d'un debounce simplifié pour ne pas recalculer à chaque pixel
+let scrollTimeout;
+window.addEventListener(
+  "scroll",
+  () => {
+    if (scrollTimeout) return;
+
+    scrollTimeout = setTimeout(() => {
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-links a");
+
+      let current = "";
+      const scrollPosition = window.scrollY;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        // Ajustement du seuil de détection
+        if (scrollPosition >= sectionTop - 250) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+
+      scrollTimeout = null;
+    }, 100); // Exécution toutes les 100ms max
+  },
+  { passive: true },
+);
+
+// ===========================
+// ACCORDION FUNCTIONALITY
+// ===========================
+function toggleTimeline(id) {
+  const item = document.getElementById(id);
+  if (item) {
+    item.classList.toggle("expanded");
   }
-
-  lastScroll = currentScroll;
-});
-
-// ===========================
-// ADD ACTIVE STATE TO NAVIGATION
-// ===========================
-window.addEventListener("scroll", () => {
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-links a");
-
-  let current = "";
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-
-    if (window.pageYOffset >= sectionTop - 200) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
-  });
-});
-
-// ===========================
-// PRELOAD IMAGES
-// ===========================
-function preloadImages() {
-  const images = document.querySelectorAll("img[data-src]");
-
-  images.forEach((img) => {
-    img.src = img.dataset.src;
-    img.removeAttribute("data-src");
-  });
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", preloadImages);
-} else {
-  preloadImages();
-}
-
-// ===========================
-// PERFORMANCE: DEBOUNCE SCROLL
-// ===========================
-function debounce(func, wait = 10, immediate = true) {
-  let timeout;
-  return function () {
-    const context = this;
-    const args = arguments;
-    const later = function () {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    const callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
 }
 
 // ===========================
@@ -172,25 +128,3 @@ console.log(
   "%cCéline DEMONGEOT - Ingénieur Test & Validation",
   "color: #191970; font-size: 14px; font-weight: bold;",
 );
-console.log("%c📧 celine@demongeot.org", "color: #6B7280; font-size: 12px;");
-
-// Menu mobile
-//const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-//const navLinks = document.querySelector(".nav-links");
-
-//if (mobileMenuBtn && navLinks) {
-//  mobileMenuBtn.addEventListener("click", () => {
-//    navLinks.classList.toggle("show");
-//    mobileMenuBtn.setAttribute(
-//      "aria-expanded",
-//      navLinks.classList.contains("show"),
-//    );
-//  });
-
-// Fermer le menu lors du clic sur un lien
-//  document.querySelectorAll(".nav-links a").forEach((link) => {
-//    link.addEventListener("click", () => {
-//      navLinks.classList.remove("show");
-//    });
-//  });
-//}
