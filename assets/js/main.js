@@ -64,21 +64,21 @@ document.querySelectorAll(".skill-card").forEach((card) => {
 // ===========================
 // MOBILE MENU TOGGLE
 // ===========================
-const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-const navLinks = document.querySelector(".nav-links");
+//const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+//const navLinks = document.querySelector(".nav-links");
 
-if (mobileMenuBtn && navLinks) {
-  mobileMenuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
+//if (mobileMenuBtn && navLinks) {
+//  mobileMenuBtn.addEventListener("click", () => {
+//    navLinks.classList.toggle("show");
+//  });
 
-  // Close menu when clicking on a link
-  document.querySelectorAll(".nav-links a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("show");
-    });
-  });
-}
+// Close menu when clicking on a link
+//  document.querySelectorAll(".nav-links a").forEach((link) => {
+//    link.addEventListener("click", () => {
+//      navLinks.classList.remove("show");
+//    });
+//  });
+//}
 
 // ===========================
 // HEADER SCROLL EFFECT
@@ -175,22 +175,22 @@ console.log(
 console.log("%c📧 celine@demongeot.org", "color: #6B7280; font-size: 12px;");
 
 // Menu mobile
-const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-const navLinks = document.querySelector(".nav-links");
+//const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+//const navLinks = document.querySelector(".nav-links");
 
-if (mobileMenuBtn && navLinks) {
-  mobileMenuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-    mobileMenuBtn.setAttribute(
-      "aria-expanded",
-      navLinks.classList.contains("show"),
-    );
-  });
+//if (mobileMenuBtn && navLinks) {
+//  mobileMenuBtn.addEventListener("click", () => {
+//    navLinks.classList.toggle("show");
+//    mobileMenuBtn.setAttribute(
+//      "aria-expanded",
+//      navLinks.classList.contains("show"),
+//    );
+//  });
 
-  // Fermer le menu lors du clic sur un lien
-  document.querySelectorAll(".nav-links a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("show");
-    });
-  });
-}
+// Fermer le menu lors du clic sur un lien
+//  document.querySelectorAll(".nav-links a").forEach((link) => {
+//    link.addEventListener("click", () => {
+//      navLinks.classList.remove("show");
+//    });
+//  });
+//}

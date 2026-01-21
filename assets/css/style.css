@@ -167,6 +167,7 @@ ul {
   color: var(--color-white);
 }
 
+/*
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -175,7 +176,7 @@ ul {
   padding: 0.5rem;
   color: var(--color-text);
 }
-
+*/
 @media (max-width: 768px) {
   .nav-links {
     display: none;
